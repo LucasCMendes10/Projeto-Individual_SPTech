@@ -1,0 +1,180 @@
+<mxfile host="app.diagrams.net" modified="2023-10-14T20:43:20.347Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="x3rDiIZ-dR2C1TgU6s5k" version="22.0.4" type="device">
+  <diagram name="Página-1" id="IMX5jdy_67BhbPZpIC3l">
+    <mxGraphModel dx="1877" dy="534" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="KrOWvXmalzNWQG0Pmo4P-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="KrOWvXmalzNWQG0Pmo4P-1" target="KrOWvXmalzNWQG0Pmo4P-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KrOWvXmalzNWQG0Pmo4P-1" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Um jovem, chamado Leonardo, estava em mais um dia comum da sua vida. Ele voltava para sua casa em um trem, até que de repente...&lt;br&gt;&lt;br&gt;Um portal se abre na sua frente, todos no trem ficam assustados e Leonardo vê um homem surgindo no portal e estendendo sua mão para fora. Esse homem diz, com um tom de urgência:&lt;br&gt;&lt;br&gt;- Rápido, venha comigo! Eu preciso da sua ajuda, AGORA!&lt;br&gt;&lt;br&gt;Leo se assusta com o recado do homem e então, perante essa situação, ele decide...&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="220" y="30" width="429" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="KrOWvXmalzNWQG0Pmo4P-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="KrOWvXmalzNWQG0Pmo4P-2" target="KrOWvXmalzNWQG0Pmo4P-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RLRS46RPOr0f4rrIx1h7-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="KrOWvXmalzNWQG0Pmo4P-2" target="KrOWvXmalzNWQG0Pmo4P-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KrOWvXmalzNWQG0Pmo4P-2" value="" style="rhombus;whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="401.75" y="340" width="65.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KrOWvXmalzNWQG0Pmo4P-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="KrOWvXmalzNWQG0Pmo4P-4" target="KrOWvXmalzNWQG0Pmo4P-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KrOWvXmalzNWQG0Pmo4P-4" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Decide recusar o pedido do homem&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="-64.38999999999999" y="332.5" width="130" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="KrOWvXmalzNWQG0Pmo4P-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="KrOWvXmalzNWQG0Pmo4P-6" target="KrOWvXmalzNWQG0Pmo4P-8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KrOWvXmalzNWQG0Pmo4P-6" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Após a recusa de Leo, o homem fica decepcionado e desesperado, assim, com um semblante triste, o homem recua sua mão e o portal se fecha.&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="-106.25999999999999" y="480" width="213.75" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="KrOWvXmalzNWQG0Pmo4P-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="KrOWvXmalzNWQG0Pmo4P-8" target="KrOWvXmalzNWQG0Pmo4P-10" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KrOWvXmalzNWQG0Pmo4P-8" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Apesar desse bizarro acontecimento, Leonardo segue sua viagem normalmente, tendo sua vida totalmente comum. Porém...&lt;br&gt;&lt;br&gt;Jamais irá se esquecer desse momento e ficará para sempre se perguntando o que teria acontecido caso tivesse ido com aquele homem misterioso.&lt;br&gt;&lt;br&gt;Leonardo nunca encontrará a resposta...&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="-160" y="660" width="321.24" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="KrOWvXmalzNWQG0Pmo4P-10" value="" style="ellipse;whiteSpace=wrap;html=1;rounded=0;fillColor=#5BD453;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="-26.879999999999995" y="930" width="54.99" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KrOWvXmalzNWQG0Pmo4P-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="KrOWvXmalzNWQG0Pmo4P-12" target="KrOWvXmalzNWQG0Pmo4P-14" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KrOWvXmalzNWQG0Pmo4P-12" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Decide aceitar o pedido do homem&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="830" y="332.5" width="130" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="KrOWvXmalzNWQG0Pmo4P-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="KrOWvXmalzNWQG0Pmo4P-14" target="KrOWvXmalzNWQG0Pmo4P-16" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KrOWvXmalzNWQG0Pmo4P-14" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Leonardo, no puro êxtase, agarra a mão do homem, que logo o puxa para dentro do portal. Assim, o portal se fecha e a vida de Leonardo nunca mais será a mesma...&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="763.75" y="480" width="262.5" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="KrOWvXmalzNWQG0Pmo4P-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="KrOWvXmalzNWQG0Pmo4P-16" target="KrOWvXmalzNWQG0Pmo4P-20" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KrOWvXmalzNWQG0Pmo4P-16" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Ao atravessar o portal, Leo se vê em um local diferente de onde estava. Ele avista prédios enormes que tocavam o céu, com uma arquitetura digna de um filme futurista e percebeu que estava em um beco entre dois prédios.&lt;br&gt;&lt;br&gt;Na hora ele pensou que poderia ter viajado para o futuro, mas sua atenção se voltou para o homem à sua frente, aquele que havia o levado até ali.&lt;br&gt;&lt;br&gt;O homem vestia roupas simples, mas com um estilo que Leonardo nunca havia presenciado. O homem, agora com uma afeição de alívio, diz:&lt;br&gt;&lt;br&gt;- Muito obrigado por ter vindo comigo, não sabe o quão importante isso é para toda a humanidade. Me perdoe por sugir tão de repente, eu não podia manter o portal aberto por muito tempo, se não eles iriam conseguir me rastrear.&lt;br&gt;&lt;br&gt;Leonardo: Te rastrear, como assim? Quem são eles? Quem é você? Onde estamos? O que está acontecendo?&lt;br&gt;&lt;br&gt;Homem Misterioso: Irei explicar tudo para você depois, eu juro, mas antes... precisamos sair daqui o mais rápido possível!&lt;br&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="670" y="660" width="450.56" height="440" as="geometry" />
+        </mxCell>
+        <mxCell id="KrOWvXmalzNWQG0Pmo4P-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="KrOWvXmalzNWQG0Pmo4P-20" target="KrOWvXmalzNWQG0Pmo4P-22" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RLRS46RPOr0f4rrIx1h7-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="KrOWvXmalzNWQG0Pmo4P-20" target="KrOWvXmalzNWQG0Pmo4P-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KrOWvXmalzNWQG0Pmo4P-20" value="" style="rhombus;whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="862.53" y="1150" width="65.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KrOWvXmalzNWQG0Pmo4P-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="KrOWvXmalzNWQG0Pmo4P-22" target="KrOWvXmalzNWQG0Pmo4P-24" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KrOWvXmalzNWQG0Pmo4P-22" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Decide insistir nas perguntas&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="183.18" y="1150" width="135.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KrOWvXmalzNWQG0Pmo4P-27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="KrOWvXmalzNWQG0Pmo4P-24" target="KrOWvXmalzNWQG0Pmo4P-26" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KrOWvXmalzNWQG0Pmo4P-24" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Leonardo não se importa com a urgência do homem, ele quer as respostas de todas as suas perguntas agora e por isso, insiste nelas.&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="88.18" y="1270" width="325.5" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="KrOWvXmalzNWQG0Pmo4P-29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="KrOWvXmalzNWQG0Pmo4P-26" target="KrOWvXmalzNWQG0Pmo4P-28" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KrOWvXmalzNWQG0Pmo4P-26" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Homem Misterioso: Você não entende, não temos tempo para isso!&lt;br&gt;&lt;br&gt;Leonardo: Responda agora minhas questões ou jamais irei colaborar com você!&lt;br&gt;&lt;br&gt;Homem Misterioso: Certo, certo... primeiro de tudo, você está no futuro, mais precisamente em 2097 e eu te chamei aqui porque sua presença nesse instante do tempo é fundamental para o futuro de toda a humanidade. Eu me chamo--&lt;br&gt;&lt;br&gt;O homem é interrompido por sirines e sons de drones voadores que chegam no local. O som das sirines remetem imediatamente ao som da polícia e Leo, apesar de assustado, já imagina que aquilo é um mal sinal para ele.&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="5.400000000000006" y="1430" width="491.06" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="KrOWvXmalzNWQG0Pmo4P-31" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="KrOWvXmalzNWQG0Pmo4P-28" target="KrOWvXmalzNWQG0Pmo4P-30" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KrOWvXmalzNWQG0Pmo4P-28" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Após os drones, chega um tipo de helipótero sem hélice apontando uma forte luz no rosto de Leo e do misterioso homem, desse mesmo veículo, um homem (de capacete, com um emblema peculiar) abre uma porta e usando um megafone, ele anuncia:&lt;br&gt;&lt;br&gt;- Aqui é a Força Policial do Governo Mundial! Vocês dois estão presos por uso indevido da ciência quântica! Coloquem suas mãos para cima e aguardem serem algemados! Se fizerem algo além disso, tenho autorização para atirar para matar!&lt;br&gt;&lt;br&gt;Os dois, sem muita escolha, erguem suas mãos e aguardam a chegada dos policiais, que rapidamente se aproximam deles (após descer do veículo) e os algema. Só que um dos policiais reconhece o homem misterioso e pergunta:&lt;br&gt;&lt;br&gt;- Você de novo? O que pensa estar fazendo dessa vez?&lt;br&gt;&lt;br&gt;Homem Misterioso: Eu... trouxe comigo a pessoa que vocês mais queriam ver!&lt;br&gt;&lt;br&gt;Leonardo se surpreende com a resposta, já o policial, o encarra de forma munuciosa e diz:&lt;br&gt;&lt;br&gt;- De fato... está mais jovem do que a imagem que conhecemos, mas é ele mesmo. Bom, hoje é seu dia de sorte.&lt;br&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="-51.31999999999999" y="1754" width="603.56" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="KrOWvXmalzNWQG0Pmo4P-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="KrOWvXmalzNWQG0Pmo4P-30" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="250.46499999999986" y="2790" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KrOWvXmalzNWQG0Pmo4P-30" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;O policial tira as algemas do homem misterioso e diz:&lt;br&gt;&lt;br&gt;- Muito bem, pode continuar livre e ainda te pagaremos uma grande recompensa pelo seu feito. Mas não pense que isso te dará um passe livre para fazer o que quiser. Já você...&lt;br&gt;&lt;/font&gt;&lt;br&gt;Ele olha pare Leonardo, que torce para ser libertado também, mas então para sua frustação, o policial diz:&lt;br&gt;&lt;br&gt;- Já você, Leonardo Aparecido de Paula Santos, sendo o principal criminoso que nós estamos procurando, está preso com pena perpétua pelo Governo Mundial! Você será mantido numa cela onde não terá contato com nada e depois será interrogado e, possivelmente, torturado, por todos os crimes que você cometeu!&lt;br&gt;&lt;br&gt;Leonardo: O QUÊ!? Mas como assim? Do que você está falando? Quem são vocês? Que tipo de crime acha que eu cometi?&lt;br&gt;&lt;br&gt;Policial: Entendo sua confusão, pois você ainda não cometeu tais crimes, por isso mesmo iremos prendê-lo aqui mesmo! Dessa forma, jamais poderá cometer os maiores crimes que a humanidade já viu. Agora cale-se! Você tem o dever de permanecer calado. Iremos te escoltar até a prisão e logo você será devidamente tratado.&lt;br&gt;&lt;br&gt;Leonardo: Não, esperem! Nã--&lt;br&gt;&lt;br&gt;Leo recebe um soco na boca por ter desobedecido a ordem e então segue. sem escolha, para sua prisão. Sendo que o homem misterioso fica ali, livre, assistindo Leo sendo levado. Acontece, que Leonardo não conseguiu ver qual era a expressão no rosto do homem.&lt;br&gt;&lt;br&gt;Será que ele estava feliz, pois concluiu seu objetivo? Será que estava acabado, por que todas as suas esperanças se foram? Será que ele queria que tudo tivesse acabado assim? O que teria acontecido caso Leo escolhesse fugir dali o mais rápido possível? E...&lt;br&gt;&lt;br&gt;O que vai acontecer com Leonardo agora? Quais foram os crimes que ele cometeu? Ainda há alguma esperança para ele? Em que tipo de realidade ele foi parar?&lt;br&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="-106.25999999999999" y="2200" width="714.39" height="520" as="geometry" />
+        </mxCell>
+        <mxCell id="KrOWvXmalzNWQG0Pmo4P-32" value="" style="ellipse;whiteSpace=wrap;html=1;rounded=0;fillColor=#5BD453;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="223.45999999999995" y="2790" width="54.99" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="RLRS46RPOr0f4rrIx1h7-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KrOWvXmalzNWQG0Pmo4P-34" target="RLRS46RPOr0f4rrIx1h7-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KrOWvXmalzNWQG0Pmo4P-34" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Decide fugir do local&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="1454.65" y="1150" width="135.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="RLRS46RPOr0f4rrIx1h7-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="RLRS46RPOr0f4rrIx1h7-1" target="RLRS46RPOr0f4rrIx1h7-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RLRS46RPOr0f4rrIx1h7-1" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Apesar de suas inúmeras dúvidas, Leonardo decide seguir as palavras do homem misterioso e se retira dali junto com ele.&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1391" y="1280" width="262.8" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="RLRS46RPOr0f4rrIx1h7-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="RLRS46RPOr0f4rrIx1h7-5" target="RLRS46RPOr0f4rrIx1h7-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RLRS46RPOr0f4rrIx1h7-5" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Após consideráveis minutos de fuga, Leo aparenta chegar no destino desejado pelo homem.&lt;br&gt;&lt;br&gt;Se antes eles estavam em um beco entre dois gigantescos prédios dignos do futuro, agora eles se encontram em um lugar mais abandonado, com estruturas ainda estranhas, mas claramente mais antigas, sujas, com vidros quebrados, cheiro ruim, lixo para todo lado e ratos passando com certa frequência.&lt;br&gt;&lt;br&gt;Tudo isso ficava em um terreno que tinha alguns prédios de tamanho médio abandonados e no fundo desse local, havia uma espécie de armazém abandonado, em um estado tão ruim quanto as demais estruturas.&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1308.6000000000001" y="1440" width="427.6" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="RLRS46RPOr0f4rrIx1h7-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="RLRS46RPOr0f4rrIx1h7-7" target="RLRS46RPOr0f4rrIx1h7-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RLRS46RPOr0f4rrIx1h7-7" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Claro que o Leonardo estava estranhando aquilo tudo e também estava nutrindo um desprezo por aquele lugar, mas ele sentia que não tinha muito escolha além de seguir o homem que o trouxe até lá.&lt;br&gt;&lt;br&gt;Após chegarem em frente a entrada do armazém abandonado, Leo decide repertir suas perguntas, pois já estava cansado de esperar pelas respostas.&lt;br&gt;&lt;br&gt;Leonardo: Já chegamos aonde queria, não é? Então vamos, responda minhas perguntas, me explique sobre tudo que tá rolando aqui!&lt;br&gt;&lt;br&gt;&lt;br&gt;Homem Misterioso: Tudo bem, aqui já estamos seguros, posso responder com calmas suas questões.&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1300.75" y="1754" width="443.3" height="291" as="geometry" />
+        </mxCell>
+        <mxCell id="RLRS46RPOr0f4rrIx1h7-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="RLRS46RPOr0f4rrIx1h7-9" target="RLRS46RPOr0f4rrIx1h7-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RLRS46RPOr0f4rrIx1h7-9" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Homem MIsterioso: Primeiro de tudo, você está no futuro, mais precisamente no ano de 2097, te chamei aqui porque sua presença nesse momento da história é fundamental para o futuro de toda a humanidade. Eu me chamo Roger, sou um renegado da sociedade. Peço perdão pelo local que estamos agora, sei que não é muito confortável, mas é aqui que eu e meu bando vive.&lt;br&gt;&lt;br&gt;Leonardo: Seu bando? Quer dizer então que tem mais pessoas vivendo aqui?&lt;br&gt;&lt;br&gt;Roger: Sim, uma quantidade considerável, infelizmente. A família de meus companheiros está nesses prédios que rodeiam o terreno, já meus amigos estão aqui dentro esperando ansiosos o meu retorno para saber se concluí minha missão.&lt;br&gt;&lt;br&gt;Leonardo: Certo, mas... por que você estava com tanta pressa para vir para cá? Por acaso está sendo procurado?&lt;br&gt;&lt;br&gt;Roger: Exatamente! Nesse tempo o mundo é controlado pelo Governo Mundial, que é uma ditadura que não aceita ninguém que viva fora das regras absurdas que eles pregam. Por isso nós, os Renegados, precisamos viver escondidos aqui. Em relação a nossa fuga, o governo tem satélites que monitoram qualquer atividade suspeita com aplicação de física quântica e abrir um portal de viagem no tempo definitivamente é bem suspeito para eles. Pode ter certeza que se tivéssimos ficado lá, em instantes eles iriam aparecer para nos prender. E eu teria que recorrer a um recurso nem um pouco desejado...&lt;br&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1250.7500000000002" y="2120" width="543.3" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="RLRS46RPOr0f4rrIx1h7-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="RLRS46RPOr0f4rrIx1h7-11" target="RLRS46RPOr0f4rrIx1h7-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RLRS46RPOr0f4rrIx1h7-11" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Por um momento, os dois ficaram em silêncio, Leonardo estava absorvendo todas as informações e Roger estava preocupado em seguir logo seus planos, com isso, o silêncio é interrompido quando o líder dos Renegados decide dizer:&lt;br&gt;&lt;br&gt;Roger: Leonardo, repitindo, você é muito importante para todo o futuro da humindade, se quer saber mais sobre seu destino, qual o seu papel nisso tudo, quem compõe o meu bando e entrar na maior jornada de toda a sua vida, entre comigo aqui no armazém ou se não... posso te levar de volta ao seu tempo. A escolha é sua!&lt;br&gt;&lt;br&gt;Diante tamanha decisão, Leonardo fica bem intrigado com tudo, mas não tem como saber aonde isso iria o levar, porém claramente seria muito perigoso, então ele decide...&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1289.1999999999998" y="2590" width="466.4" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="RLRS46RPOr0f4rrIx1h7-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="RLRS46RPOr0f4rrIx1h7-13" target="RLRS46RPOr0f4rrIx1h7-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RLRS46RPOr0f4rrIx1h7-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="RLRS46RPOr0f4rrIx1h7-13" target="RLRS46RPOr0f4rrIx1h7-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RLRS46RPOr0f4rrIx1h7-13" value="" style="rhombus;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1489.65" y="2880" width="65.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="RLRS46RPOr0f4rrIx1h7-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="RLRS46RPOr0f4rrIx1h7-15" target="RLRS46RPOr0f4rrIx1h7-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RLRS46RPOr0f4rrIx1h7-15" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Decide aceitar a aventura e seguir Roger&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="2875" width="130" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="RLRS46RPOr0f4rrIx1h7-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="RLRS46RPOr0f4rrIx1h7-17" target="RLRS46RPOr0f4rrIx1h7-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RLRS46RPOr0f4rrIx1h7-17" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Decide recusar a aventura e pedir para voltar ao seu presente&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1870" y="2875" width="170" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="RLRS46RPOr0f4rrIx1h7-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="RLRS46RPOr0f4rrIx1h7-19" target="RLRS46RPOr0f4rrIx1h7-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RLRS46RPOr0f4rrIx1h7-19" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Leonardo aceita encarar essa aventura, que como Roger já disse, será a maior da sua vida. Então, convicto, ele segue o homem responsável pela sua chegada ali, rumo a sua nova jornada!&lt;br&gt;&lt;br&gt;Ao entrar no armazém, Leo se depara com um grupo de pessoas que os estavam aguardando, aqueles eram... Os Renegados, o bando de Roger!&lt;br&gt;&lt;br&gt;O que vai acontecer agora? Tudo que o Roger disse é mesmo verdade? Leonardo pode confiar nele e em seu bando? Por que Leo é tão importante? Qual seria o seu destino? Que papel ele vai precisar desempenhar? Algum dia Leo poderá voltar para o seu tempo?&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="892.81" y="3010" width="424.37" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="RLRS46RPOr0f4rrIx1h7-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="RLRS46RPOr0f4rrIx1h7-21" target="RLRS46RPOr0f4rrIx1h7-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RLRS46RPOr0f4rrIx1h7-21" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Leonardo recusa a aventura e escolhe pedir para voltar para seu tempo, ele prefere continuar tendo uma vida normal do que aceitar uma jornada tão grandiosa assim. Mas então...&lt;br&gt;&lt;br&gt;Ele se arrepende da sua escolha, pois não consegue resistir a sua curiosidade e vontade de seguir nessa aventura. Por isso, ele segue Roger até o armazém e inicia sua nova e maior jornada de toda a sua vida!&lt;br&gt;&lt;br&gt;Ao entrar no armazém, Leo se depara com um grupo de pessoas que os estavam aguardando, aqueles eram... Os Renegados, o bando de Roger!&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;O que vai acontecer agora? Tudo que o Roger disse é mesmo verdade? Leonardo pode confiar nele e em seu bando? Por que Leo é tão importante? Qual seria o seu destino? Que papel ele vai precisar desempenhar? Algum dia Leo poderá voltar para o seu tempo?&lt;br&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1707.8100000000002" y="2985" width="494.37" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="RLRS46RPOr0f4rrIx1h7-23" value="" style="ellipse;whiteSpace=wrap;html=1;rounded=0;fillColor=#5BD453;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1494.9" y="3400" width="54.99" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
