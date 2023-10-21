@@ -7,6 +7,121 @@
     <link rel="stylesheet" href="style-jogos.css">
 </head>
 <body>
-    
+    <div class="header">
+
+        <h1>
+            <a href="C:\Users\lucas\Desktop\Projeto-Individual_SPTech\Public\Home\index.html">
+                *NomeProvisório
+            </a>
+        </h1>
+        
+        <div class="navbar">
+            <ul>
+                <li>
+                    <a href="C:\Users\lucas\Desktop\Projeto-Individual_SPTech\Public\Home\index.html">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#jogar">
+                        Jogar
+                    </a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="C:\Users\lucas\Desktop\Projeto-Individual_SPTech\Public\Login\login.html">
+                        Login
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="main">
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+        <div id="jogar" class="selecao">
+            <h2>Selecione o jogo que deseja jogar:</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    Jogo 1 (Curto)
+
+                    <button onclick="acessarPagJogo1()">
+                        Jogar
+                    </button>
+                    <button onclick="acessarDescJogo1()">
+                        Saiba mais
+                    </button>
+                </div>
+
+                <div class="card">
+                    The Gate (Longo)
+
+                    <button onclick="acessarPagJogo2()">
+                        Jogar
+                    </button>
+                    <button onclick="acessarDescJogo2()">
+                        Saiba mais
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+        <div class="sobre-jogos">
+
+            <div id="hist_curta" class="descricao">
+                Descrição do Jogo 1
+
+                <button onclick="acessarJogar()">
+                    Jogue agora!
+                </button>
+            </div>
+
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+            <div id="hist_longa" class="descricao">
+                Descrição do jogo 2
+
+                <button onclick="acessarJogar()">
+                    Jogue agora!
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer"></div>
 </body>
 </html>
+
+<script>
+
+    function acessarPagJogo1() {
+        window.location.href = "C:/Users/lucas/Desktop/Projeto-Individual_SPTech/Public/Jogos/jogo1.html";
+    }
+
+    function acessarDescJogo1() {
+        window.location.href = "#hist_curta";
+    }
+
+    function acessarPagJogo2() {
+        window.location.href = "C:/Users/lucas/Desktop/Projeto-Individual_SPTech/Public/Jogos/the-gate.html";
+    }
+
+    function acessarDescJogo2() {
+        window.location.href = "#hist_longa";
+    }
+
+    function acessarJogar() {
+        window.location.href = "#jogar";
+    }
+
+</script>

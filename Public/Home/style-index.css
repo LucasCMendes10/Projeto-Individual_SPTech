@@ -1,0 +1,16 @@
+* {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+}
+
+.header .navbar ul {
+    list-style: none;
+}
