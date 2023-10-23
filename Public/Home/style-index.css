@@ -22,16 +22,21 @@ a {
 .header .navbar {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 80px;
     width: 100%;
     background-color: white;
     position: fixed;
 }
 
+.header .navbar h1 {
+    margin-left: 245px;
+}
+
 .header .navbar ul {
     list-style: none;
     display: flex;
+    margin-right: 245px;
 }
 
 .header .navbar ul li {
