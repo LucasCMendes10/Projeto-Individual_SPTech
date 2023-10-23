@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - O Viajante</title>
+    <link rel="stylesheet" href="style-viajante.css">
+</head>
+
+<body>
+    <div id="tela">
+        <div class="header">
+            <img src="C:/Users/lucas/Desktop/Projeto-Individual_SPTech/Public/assets/Imagens Jogos/seta-esquerda.png"
+                alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
+                onclick="voltarJogos()">
+        </div>
+
+        <div class="menu">
+            <h1>O Viajante</h1>
+
+            <button onclick="abrirCaixaConfirmacao()">
+                Novo Jogo
+            </button><br>
+
+            <button onclick="loadGame()">
+                Carregar Jogo
+            </button><br>
+
+            <button>
+                Estatísticas
+            </button><br>
+
+            <button onclick="mostrarCreditos()">
+                Créditos
+            </button><br>
+        </div>
+
+        <div id="tela_de_fundo" class="background">
+            <div id="caixa_confirmacao" class="caixa">
+                <p>Tem certeza que quer iniciar um novo jogo?</p>
+    
+                <button onclick="newGame()">
+                    Novo Jogo
+                </button>
+    
+                <button onclick="fecharCaixaConfirmacao()">
+                    Cancelar
+                </button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    var tela18 = `
+        <div class="header">
+            <img src="C:/Users/lucas/Desktop/Projeto-Individual_SPTech/Public/assets/Imagens Jogos/seta-esquerda.png"
+            alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
+            onclick="voltarMenu()">
+            </div>
+            
+            <h1>Você chegou ao Final!</h1>
+            
+            <h2>Final Mundano</h2>
+            
+            <p>Apesar desse bizarro acontecimento, Leonardo segue sua viagem normalmente, tendo sua vida totalmente comum. Porém... <br>
+                
+                Jamais irá se esquecer desse momento e ficará para sempre se perguntando o que teria acontecido caso tivesse ido com aquele homem misterioso. <br>
+
+                Leonardo nunca encontrará a resposta...</p> <br>
+                
+        <button onclick="voltarMenu()">
+            Voltar ao Menu
+            </button>
+        `
+
+    var tela17 = `
+        <div class="header">
+            <img src="C:/Users/lucas/Desktop/Projeto-Individual_SPTech/Public/assets/Imagens Jogos/seta-esquerda.png"
+            alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
+            onclick="voltarMenu()">
+            </div>
+            
+            <h1>Você chegou ao Final!</h1>
+            
+            <h2>Final Confinado</h2>
+
+            <p>Será que o homem estava feliz, pois concluiu seu objetivo? Será que estava acabado, por que todas as suas esperanças se foram? Será que ele queria que tudo tivesse acabado assim? O que teria acontecido caso Leo escolhesse fugir dali o mais rápido possível? E...<br>
+                
+                O que vai acontecer com Leonardo agora? Quais foram os crimes que ele cometeu? Ainda há alguma esperança para ele? Em que tipo de realidade ele foi parar?</p><br>
+                
+                <button onclick="voltarMenu()">
+                    Voltar ao Menu
+                    </button>
+        `
+
+    var tela16 = `
+        <div class="header">
+            <img src="C:/Users/lucas/Desktop/Projeto-Individual_SPTech/Public/assets/Imagens Jogos/seta-esquerda.png"
+            alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
+            onclick="voltarMenu()">
+        </div>
+
+        <h1>Você chegou ao Final!</h1>
+        
+        <h2>Final Épico</h2>
+        
+        <p>
+            O que vai acontecer agora? Tudo que o Roger disse é mesmo verdade? Leonardo pode confiar nele e em seu bando? Por que Leo é tão importante? Qual seria o seu destino? Que papel ele vai precisar desempenhar? Algum dia Leo poderá voltar para o seu tempo?
+        </p><br>
+        
+        <button onclick="voltarMenu()">
+            Voltar ao Menu
+            </button>
+            `
+
+    var tela15 = `
+            <div class="header">
+                <img src="C:/Users/lucas/Desktop/Projeto-Individual_SPTech/Public/assets/Imagens Jogos/seta-esquerda.png"
+                alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
+                onclick="voltarMenu()">
+                </div>
+                
+                <p>
+                    Leonardo recusa a aventura e escolhe pedir para voltar para seu tempo, ele prefere continuar tendo uma vida normal do que aceitar uma jornada tão grandiosa assim. Mas então...<br>
+                    
+                    Ele se arrepende da sua escolha, pois não consegue resistir a sua curiosidade e vontade de seguir nessa aventura. Por isso, ele segue Roger até o armazém e inicia sua nova e maior jornada de toda a sua vida!<br>
+
+        Ao entrar no armazém, Leo se depara com um grupo de pessoas que os estavam aguardando, aqueles eram... Os Renegados, o bando de Roger!
+        </p><br>
+
+        <button id="caminho1" value="1" onclick="verificarCaminho(this)">
+            Continuar
+            </button>
+            `
+
+    var tela14 = `
+        <div class="header">
+        <img src="C:/Users/lucas/Desktop/Projeto-Individual_SPTech/Public/assets/Imagens Jogos/seta-esquerda.png"
+        alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
+        onclick="voltarMenu()">
+        </div>
+        
+        <p>
+            Leonardo aceita encarar essa aventura, que como Roger já disse, será a maior da sua vida. Então, convicto, ele segue o homem responsável pela sua chegada ali, rumo a sua nova jornada!<br>
+            
+            Ao entrar no armazém, Leo se depara com um grupo de pessoas que os estavam aguardando, aqueles eram... Os Renegados, o bando de Roger!
+        </p><br>
+        
+        <button id="caminho1" value="1" onclick="verificarCaminho(this)">
+            Continuar
+            </button>
+            `
+
+    var tela13 = `
+        <div class="header">
+        <img src="C:/Users/lucas/Desktop/Projeto-Individual_SPTech/Public/assets/Imagens Jogos/seta-esquerda.png"
+            alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
+            onclick="voltarMenu()">
+        </div>
+
+        <p>
+            Por um momento, os dois ficaram em silêncio, Leonardo estava absorvendo todas as informações e Roger estava preocupado em seguir logo seus planos, com isso, o silêncio é interrompido quando o líder dos Renegados decide dizer:<br>
+            
+            Roger: Leonardo, repitindo, você é muito importante para todo o futuro da humindade, se quer saber mais sobre seu destino, qual o seu papel nisso tudo, quem compõe o meu bando e entrar na maior jornada de toda a sua vida, entre comigo aqui no armazém ou se não... posso te levar de volta ao seu tempo. A escolha é sua!<br>
+            
+        Diante tamanha decisão, Leonardo fica bem intrigado com tudo, mas não tem como saber aonde isso iria o levar, porém claramente seria muito perigoso, então ele decide...
+        </p><br>
+        
+        <button id="caminho1" value="1" onclick="verificarCaminho(this)">
+            Decide aceitar a aventura e seguir Roger
+            </button>
+        <button id="caminho2" value="2" onclick="verificarCaminho(this)">
+            Decide recusar a aventura e pedir para voltar ao seu presente
+            </button>
+            `
+
+    var tela12 = `
+        <div class="header">
+        <img src="C:/Users/lucas/Desktop/Projeto-Individual_SPTech/Public/assets/Imagens Jogos/seta-esquerda.png"
+        alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
+        onclick="voltarMenu()">
+        </div>
+
+        <p>
+            Homem MIsterioso: Primeiro de tudo, você está no futuro, mais precisamente no ano de 2097, te chamei aqui porque sua presença nesse momento da história é fundamental para o futuro de toda a humanidade. Eu me chamo Roger, sou um renegado da sociedade. Peço perdão pelo local que estamos agora, sei que não é muito confortável, mas é aqui que eu e meu bando vive.<br>
+            
+        Leonardo: Seu bando? Quer dizer então que tem mais pessoas vivendo aqui?<br>
+
+        Roger: Sim, uma quantidade considerável, infelizmente. A família de meus companheiros está nesses prédios que rodeiam o terreno, já meus amigos estão aqui dentro esperando ansiosos o meu retorno para saber se concluí minha missão.<br>
+        
+        Leonardo: Certo, mas... por que você estava com tanta pressa para vir para cá? Por acaso está sendo procurado?<br>
+
+        Roger: Exatamente! Nesse tempo o mundo é controlado pelo Governo Mundial, que é uma ditadura que não aceita ninguém que viva fora das regras absurdas que eles pregam. Por isso nós, os Renegados, precisamos viver escondidos aqui. Em relação a nossa fuga, o governo tem satélites que monitoram qualquer atividade suspeita com aplicação de física quântica e abrir um portal de viagem no tempo definitivamente é bem suspeito para eles. Pode ter certeza que se tivéssimos ficado lá, em instantes eles iriam aparecer para nos prender. E eu teria que recorrer a um recurso nem um pouco desejado...
+        </p><br>
+        
+        <button id="caminho1" value="1" onclick="verificarCaminho(this)">
+            Continuar
+            </button>
+            `
+
+    var tela11 = `
+            <div class="header">
+                <img src="C:/Users/lucas/Desktop/Projeto-Individual_SPTech/Public/assets/Imagens Jogos/seta-esquerda.png"
+                alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
+            onclick="voltarMenu()">
+        </div>
+        
+        <p>
+            Claro que o Leonardo estava estranhando aquilo tudo e também estava nutrindo um desprezo por aquele lugar, mas ele sentia que não tinha muito escolha além de seguir o homem que o trouxe até lá.<br>
+
+        Após chegarem em frente a entrada do armazém abandonado, Leo decide repertir suas perguntas, pois já estava cansado de esperar pelas respostas.<br>
+        
+        Leonardo: Já chegamos aonde queria, não é? Então vamos, responda minhas perguntas, me explique sobre tudo que tá rolando aqui!<br>
+        
+        
+        Homem Misterioso: Tudo bem, aqui já estamos seguros, posso responder com calmas suas questões.
+        </p><br>
+        
+        <button id="caminho1" value="1" onclick="verificarCaminho(this)">
+            Continuar
+            </button> `
+
+    var tela10 = `
+        <div class="header">
+            <img src="C:/Users/lucas/Desktop/Projeto-Individual_SPTech/Public/assets/Imagens Jogos/seta-esquerda.png"
+            alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
+            onclick="voltarMenu()">
+            </div>
+            
+            <p>
+                Após consideráveis minutos de fuga, Leo aparenta chegar no destino desejado pelo homem.<br>
+                
+                Se antes eles estavam em um beco entre dois gigantescos prédios dignos do futuro, agora eles se encontram em um lugar mais abandonado, com estruturas ainda estranhas, mas claramente mais antigas, sujas, com vidros quebrados, cheiro ruim, lixo para todo lado e ratos passando com certa frequência.<br>
+                
+                Tudo isso ficava em um terreno que tinha alguns prédios de tamanho médio abandonados e no fundo desse local, havia uma espécie de armazém abandonado, em um estado tão ruim quanto as demais estruturas.
+                </p><br>
+                
+                <button id="caminho1" value="1" onclick="verificarCaminho(this)">
+                    Continuar
+                    </button>
+                    `
+
+    var tela9 = `
+        <div class="header">
+            <img src="C:/Users/lucas/Desktop/Projeto-Individual_SPTech/Public/assets/Imagens Jogos/seta-esquerda.png"
+            alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
+            onclick="voltarMenu()">
+            </div>
+
+        <p>
+            Apesar de suas inúmeras dúvidas, Leonardo decide seguir as palavras do homem misterioso e se retira dali junto com ele.
+            </p><br>
+            
+            <button id="caminho1" value="1" onclick="verificarCaminho(this)">
+                Continuar
+                </button>
+            `
+
+    var tela8 = `
+        <div class="header">
+            <img src="C:/Users/lucas/Desktop/Projeto-Individual_SPTech/Public/assets/Imagens Jogos/seta-esquerda.png"
+            alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
+            onclick="voltarMenu()">
+            </div>
+
+        <p>O policial tira as algemas do homem misterioso e diz:<br>
+            
+            - Muito bem, pode continuar livre e ainda te pagaremos uma grande recompensa pelo seu feito. Mas não pense que isso te dará um passe livre para fazer o que quiser. Já você...<br>
+            
+            Ele olha pare Leonardo, que torce para ser libertado também, mas então para sua frustação, o policial diz:<br>
+            
+            - Já você, Leonardo Aparecido de Paula Santos, sendo o principal criminoso que nós estamos procurando, está preso com pena perpétua pelo Governo Mundial! Você será mantido numa cela onde não terá contato com nada e depois será interrogado e, possivelmente, torturado, por todos os crimes que você cometeu!<br>
+
+            Leonardo: O QUÊ!? Mas como assim? Do que você está falando? Quem são vocês? Que tipo de crime acha que eu cometi?<br>
+            
+            Policial: Entendo sua confusão, pois você ainda não cometeu tais crimes, por isso mesmo iremos prendê-lo aqui mesmo! Dessa forma, jamais poderá cometer os maiores crimes que a humanidade já viu. Agora cale-se! Você tem o dever de permanecer calado. Iremos te escoltar até a prisão e logo você será devidamente tratado.<br>
+            
+            Leonardo: Não, esperem! Nã--<br>
+            
+            Leo recebe um soco na boca por ter desobedecido a ordem e então segue. sem escolha, para sua prisão. Sendo que o homem misterioso fica ali, livre, assistindo Leo sendo levado. Acontece, que Leonardo não conseguiu ver qual era a expressão no rosto do homem.</p><br>
+            
+        <button id="caminho1" value="1" onclick="verificarCaminho(this)">
+            Continuar
+        </button>
+        `
+
+    var tela7 = `
+        <div class="header">
+            <img src="C:/Users/lucas/Desktop/Projeto-Individual_SPTech/Public/assets/Imagens Jogos/seta-esquerda.png"
+            alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
+            onclick="voltarMenu()">
+            </div>
+
+            <p>Após os drones, chega um tipo de helipótero sem hélice apontando uma forte luz no rosto de Leo e do misterioso homem, desse mesmo veículo, um homem (de capacete, com um emblema peculiar) abre uma porta e usando um megafone, ele anuncia:<br>
+                
+                - Aqui é a Força Policial do Governo Mundial! Vocês dois estão presos por uso indevido da ciência quântica! Coloquem suas mãos para cima e aguardem serem algemados! Se fizerem algo além disso, tenho autorização para atirar para matar!<br>
+                
+        Os dois, sem muita escolha, erguem suas mãos e aguardam a chegada dos policiais, que rapidamente se aproximam deles (após descer do veículo) e os algema. Só que um dos policiais reconhece o homem misterioso e pergunta:<br>
+        
+        - Você de novo? O que pensa estar fazendo dessa vez?<br>
+
+        Homem Misterioso: Eu... trouxe comigo a pessoa que vocês mais queriam ver!<br>
+        
+        Leonardo se surpreende com a resposta, já o policial, o encarra de forma munuciosa e diz:<br>
+
+        - De fato... está mais jovem do que a imagem que conhecemos, mas é ele mesmo. Bom, hoje é seu dia de sorte.</p><br>
+        
+        <button id="caminho1" value="1" onclick="verificarCaminho(this)">
+            Continuar
+            </button>
+            `
+
+    var tela6 = `
+        <div class="header">
+        <img src="C:/Users/lucas/Desktop/Projeto-Individual_SPTech/Public/assets/Imagens Jogos/seta-esquerda.png"
+            alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
+            onclick="voltarMenu()">
+        </div>
+        
+        <p>Homem Misterioso: Você não entende, não temos tempo para isso!<br>
+
+        Leonardo: Responda agora minhas questões ou jamais irei colaborar com você!<br>
+        
+        Homem Misterioso: Certo, certo... primeiro de tudo, você está no futuro, mais precisamente em 2097 e eu te chamei aqui porque sua presença nesse instante do tempo é fundamental para o futuro de toda a humanidade. Eu me chamo--<br>
+
+        O homem é interrompido por sirines e sons de drones voadores que chegam no local. O som das sirines remetem imediatamente ao som da polícia e Leo, apesar de assustado, já imagina que aquilo é um mal sinal para ele.</p><br>
+        
+        <button id="caminho1" value="1" onclick="verificarCaminho(this)">
+            Continuar
+            </button>
+            `
+
+    var tela5 = `
+        <div class="header">
+            <img src="C:/Users/lucas/Desktop/Projeto-Individual_SPTech/Public/assets/Imagens Jogos/seta-esquerda.png"
+            alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
+            onclick="voltarMenu()">
+            </div>
+
+            <p>Leonardo não se importa com a urgência do homem, ele quer as respostas de todas as suas perguntas agora e por isso, insiste nelas.</p><br>
+            
+            <button id="caminho1" value="1" onclick="verificarCaminho(this)">
+                Continuar
+                </button>`
+
+    var tela4 = `
+        <div class="header">
+            <img src="C:/Users/lucas/Desktop/Projeto-Individual_SPTech/Public/assets/Imagens Jogos/seta-esquerda.png"
+            alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
+            onclick="voltarMenu()">
+            </div>
+            
+            <p>Ao atravessar o portal, Leo se vê em um local diferente de onde estava. Ele avista prédios enormes que tocavam o céu, com uma arquitetura digna de um filme futurista e percebeu que estava em um beco entre dois prédios.<br>
+                
+                Na hora ele pensou que poderia ter viajado para o futuro, mas sua atenção se voltou para o homem à sua frente, aquele que havia o levado até ali.<br>
+
+        O homem vestia roupas simples, mas com um estilo que Leonardo nunca havia presenciado. O homem, agora com uma afeição de alívio, diz:<br>
+
+        - Muito obrigado por ter vindo comigo, não sabe o quão importante isso é para toda a humanidade. Me perdoe por sugir tão de repente, eu não podia manter o portal aberto por muito tempo, se não eles iriam conseguir me rastrear.<br>
+        
+        Leonardo: Te rastrear, como assim? Quem são eles? Quem é você? Onde estamos? O que está acontecendo?<br>
+        
+        Homem Misterioso: Irei explicar tudo para você depois, eu juro, mas antes... precisamos sair daqui o mais rápido possível!</p><br>
+
+        <button id="caminho1" value="1" onclick="verificarCaminho(this)">
+            Decide insistir nas perguntas
+            </button>
+            <button id="caminho2" value="2" onclick="verificarCaminho(this)">
+                Decide fugir do local
+                </button>
+                `
+
+    var tela3 = `
+        <div class="header">
+            <img src="C:/Users/lucas/Desktop/Projeto-Individual_SPTech/Public/assets/Imagens Jogos/seta-esquerda.png"
+            alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
+            onclick="voltarMenu()">
+        </div>
+        
+        <p>Leonardo, no puro êxtase, agarra a mão do homem, que logo o puxa para dentro do portal. Assim, o portal se fecha e a vida de Leonardo nunca mais será a mesma...</p><br>
+        
+        <button id="caminho1" value="1" onclick="verificarCaminho(this)">
+            Continuar
+            </button>`
+
+    var tela2 = `
+        <div class="header">
+            <img src="C:/Users/lucas/Desktop/Projeto-Individual_SPTech/Public/assets/Imagens Jogos/seta-esquerda.png"
+            alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
+            onclick="voltarMenu()">
+        </div>
+        
+        <p>Após a recusa de Leo, o homem fica decepcionado e desesperado, assim, com um semblante triste, o homem recua sua mão e o portal se fecha.</p><br>
+        
+        <button id="caminho1" value="1" onclick="verificarCaminho(this)">
+            Continuar
+            </button>
+            `
+
+    var tela1 = `
+        <div class="header">
+            <img src="C:/Users/lucas/Desktop/Projeto-Individual_SPTech/Public/assets/Imagens Jogos/seta-esquerda.png"
+            alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
+            onclick="voltarMenu()">
+            </div>
+
+        <p>Um jovem, chamado Leonardo, estava em mais um dia comum da sua vida. Ele voltava para sua casa em um trem, até que de repente...<br>
+            
+            Um portal se abre na sua frente, todos no trem ficam assustados e Leonardo vê um homem surgindo no portal e estendendo sua mão para fora. Esse homem diz, com um tom de urgência:<br>
+            
+            - Rápido, venha comigo! Eu preciso da sua ajuda, AGORA!<br>
+            
+        Leo se assusta com o recado do homem e então, perante essa situação, ele decide...</p><br>
+        
+        <button id="caminho1" value="1" onclick="verificarCaminho(this)">
+            Decide recusar o pedido do homem
+            </button>
+            <button id="caminho2" value="2" onclick="verificarCaminho(this)">
+                Decide aceitar o pedido do homem
+                </button>
+                `
+
+    var telas = [tela1, tela2, tela3, tela4, tela5, tela6, tela7, tela8, tela9, tela10, tela11, tela12, tela13, tela14, tela15, tela16, tela17, tela18]
+
+    var tela_atual = telas[0];
+
+    function voltarJogos() {
+        window.location.href = "C:/Users/lucas/Desktop/Projeto-Individual_SPTech/Public/Jogos/jogos.html#jogar";
+    }
+
+    function voltarMenu() {
+        tela.innerHTML = `
+        <div class="header">
+            <img src="C:/Users/lucas/Desktop/Projeto-Individual_SPTech/Public/assets/Imagens Jogos/seta-esquerda.png"
+                alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
+                onclick="voltarJogos()">
+        </div>
+
+        <div class="menu">
+            <h1>O Viajante</h1>
+
+            <button onclick="abrirCaixaConfirmacao()">
+                Novo Jogo
+            </button><br>
+
+            <button onclick="loadGame()">
+                Carregar Jogo
+            </button><br>
+
+            <button>
+                Estatísticas
+            </button><br>
+
+            <button onclick="mostrarCreditos()">
+                Créditos
+            </button><br>
+        </div>
+
+        <div id="tela_de_fundo" class="background">
+            <div id="caixa_confirmacao" class="caixa">
+                <p>Tem certeza que quer iniciar um novo jogo?</p>
+    
+                <button onclick="newGame()">
+                    Novo Jogo
+                </button>
+    
+                <button onclick="fecharCaixaConfirmacao()">
+                    Cancelar
+                </button>
+            </div>
+        </div>
+        `
+    }
+
+    function mostrarCreditos() {
+        tela.innerHTML = `
+        <div class="header">
+        <img src="C:/Users/lucas/Desktop/Projeto-Individual_SPTech/Public/assets/Imagens Jogos/seta-esquerda.png"
+            alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
+            onclick="voltarMenu()">
+    </div>
+
+    <div>
+        <h1>
+            Créditos:
+        </h1>
+
+        <p>
+            <b>Desenvolvido por:</b><br> Lucas Carvalho Mendes<br>
+            <b>Escrito por: </b><br> Lucas Carvalho Mendes<br><br>
+            <b>Feito em:</b><br> JavaScript, HTML e css<br><br>
+            <b>Agradecimento: </b><br> Leonardo Santos
+        </p>
+    </div>
+        `
+    }
+
+    function newGame() {
+        tela_atual = telas[0];
+        tela.innerHTML = telas[0];
+        localStorage.removeItem('save');
+        tela_de_fundo.style.display = 'none';
+        caixa_confirmacao.style.display = 'none';
+    }
+
+    function abrirCaixaConfirmacao() {
+        tela_de_fundo.style.display = 'block';
+        caixa_confirmacao.style.display = 'flex';
+    }
+
+    function fecharCaixaConfirmacao() {
+        tela_de_fundo.style.display = 'none';
+        caixa_confirmacao.style.display = 'none';
+    }
+
+    function verificarCaminho(botao) {
+        var escolha = Number(botao.value);
+
+        if (tela_atual == telas[0] && escolha == 1) {
+            tela.innerHTML = telas[1];
+            tela_atual = telas[1];
+        } else if (tela_atual == telas[0] && escolha == 2) {
+            tela.innerHTML = telas[2];
+            tela_atual = telas[2];
+        }
+
+        else if (tela_atual == telas[1] && escolha == 1) {
+            tela.innerHTML = telas[17];
+            tela_atual = telas[17];
+        }
+
+        localStorage.setItem('save', tela_atual);
+    }
+
+    function loadGame() {
+        var load = localStorage.getItem('save');
+
+        if (!load) {
+            alert("Você não possui nenhum progresso salvo");
+        } else {
+            tela.innerHTML = load;
+        }
+    }
+
+</script>

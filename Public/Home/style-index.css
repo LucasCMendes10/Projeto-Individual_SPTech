@@ -1,5 +1,11 @@
 * {
     font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
 }
 
 a {
@@ -9,8 +15,43 @@ a {
 .header {
     display: flex;
     justify-content: space-around;
+    background-color: rgb(34, 34, 126);
+    height: 98%;
+}
+
+.header .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 80px;
+    width: 100%;
+    background-color: white;
+    position: fixed;
 }
 
 .header .navbar ul {
     list-style: none;
+    display: flex;
+}
+
+.header .navbar ul li {
+    margin-left: 16px;
+}
+
+.container {
+    display: flex;
+    /* background-image: url('../assets/Zenitsu\ Wallpaper.jpg'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container .coluna1 {
+    width: 50%;
+}
+
+.container .coluna2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
 }
