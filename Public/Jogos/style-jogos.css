@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+html {
+    scroll-padding-top: 80px;
+}
+
 a {
     text-decoration: none;
 }
