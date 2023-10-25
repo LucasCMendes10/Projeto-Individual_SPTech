@@ -1,5 +1,5 @@
 * {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -8,15 +8,33 @@ html {
     scroll-padding-top: 80px;
 }
 
+html, body {
+    height: 100%;
+    background-color: #eaeaea;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #505050;
+}
+
 a {
     text-decoration: none;
+    color: white;
+    transition: all .2s ease-out;
+}
+
+.header .navbar ul li a:hover {
+    color: #c99156;
 }
 
 .header {
     display: flex;
     justify-content: space-around;
-    background-color: rgb(34, 34, 126);
-    height: 98%;
+    height: 15%;
 }
 
 .header .navbar {
@@ -25,12 +43,14 @@ a {
     justify-content: space-between;
     height: 80px;
     width: 100%;
-    background-color: white;
+    background-color: #161616;
     position: fixed;
 }
 
 .header .navbar h1 {
     margin-left: 245px;
+    color: white;
+    font-size: 1.5rem;
 }
 
 .header .navbar ul {
@@ -41,4 +61,6 @@ a {
 
 .header .navbar ul li {
     margin-left: 16px;
+    color: white;
+    font-size: 0.9rem;
 }

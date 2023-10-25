@@ -7,26 +7,22 @@
     <link rel="stylesheet" href="style-login.css">
 </head>
 <body>
+
     <div class="header">
-
-        <div class="navbar">
-            <h1>
-                <a href="../Home/index.html">
-                    *NomeProvisório
-                </a>
-            </h1>
-            <ul>
-                <li>
-                    <a href="../Home/index.html">
-                        Home
-                    </a>
-                </li>
-            </ul>
-        </div>
-
+        <img src="../assets/Imagens-Jogos/seta-esquerda.png"
+            alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
+            onclick="voltarHome()">
     </div>
 
-    <div class="footer"></div>
+    <div class="main"></div>
 
 </body>
 </html>
+
+<script>
+
+    function voltarHome() {
+        window.location.href = '../Home/index.html';
+    }
+
+</script>

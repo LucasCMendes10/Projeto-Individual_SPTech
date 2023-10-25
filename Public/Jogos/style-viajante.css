@@ -8,6 +8,16 @@ html, body {
     height: 100%;
 }
 
+.header img {
+    cursor: pointer;
+    transition: all .2s ease-out;
+    margin-left: 20px;
+}
+
+.header img:hover {
+    transform: scale(1.1);
+}
+
 .background {
     display: none;
     height: 100%;
