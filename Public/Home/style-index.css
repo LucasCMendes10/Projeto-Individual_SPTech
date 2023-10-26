@@ -118,3 +118,46 @@ a {
     background-color: #161616;
     color: #eaeaea;
 }
+
+.main .container {
+    display: flex;
+}
+
+.main #sobre_mim .container .coluna1 {
+    display: flex;
+    justify-content: center;
+}
+
+.main #sobre_mim .container .fundo-sobre-mim {
+    background-color: #C3C3C3;
+}
+
+.main #sobre_mim .container .coluna1 .selfie {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+.main #sobre_mim .container .coluna1 .selfie img {
+    align-self: center;
+    border-radius: 50%;
+    border: 3px;
+    border-color: #202020;
+    border-style: solid;
+}
+
+.main #sobre_mim .container .coluna2 {
+    background-color: #202020;
+    color: white;
+    padding: 20px;
+}
+
+.main #sobre_mim .container .coluna2 h1 {
+    width: 500px;
+    font-size: 1.5rem;
+}
+
+.main #sobre_mim .container .coluna2 p {
+    width: 500px;
+    font-size: 1rem;
+}
