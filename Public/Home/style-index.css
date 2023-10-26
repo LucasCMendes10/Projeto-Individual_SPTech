@@ -12,6 +12,7 @@ Branco: #eaeaea
 
 html {
     scroll-padding-top: 80px;
+    scroll-behavior: smooth;
 }
 
 html, body {
@@ -51,6 +52,7 @@ a {
     width: 100%;
     background-color: #161616;
     position: fixed;
+    user-select: none;
 }
 
 .header .navbar h1 {
@@ -85,6 +87,7 @@ a {
 
 .container .coluna2 {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 50%;
@@ -95,4 +98,23 @@ a {
     width: 400px;
     font-size: 1.2rem;
     margin-top: 28px;
+}
+
+.container .coluna2 button {
+    margin-top: 28px;
+    padding: 18px 22px;
+    border: none;
+    border-radius: 8px;
+    user-select: none;
+    cursor: pointer;
+    background-color: #eaeaea;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all .2s ease-out;
+}
+
+.container .coluna2 button:hover {
+    transform: scale(1.06);
+    background-color: #161616;
+    color: #eaeaea;
 }
