@@ -4,11 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    <link rel="stylesheet" href="style-cadastro.css.css">
+    <link rel="stylesheet" href="style-cadastro.css">
 </head>
 <body>
-    
-    <div class="main"></div>
+
+    <div class="header">
+        <img src="../assets/Imagens-Jogos/seta-esquerda.png"
+            alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
+            onclick="acessarLogin()">
+    </div>
+
+    <div class="main">
+
+        <div class="container">
+
+            <div class="coluna1">
+
+                <div>
+                    <h3 class="nome_completo">Nome Completo:</h3>
+                    <input type="text" id="nome_user">
+                </div>
+
+                <div>
+                    <h3 class="dtNasc">Data de Nascimento:</h3>
+                    <input type="text" id="dtNasc_user" placeholder="DD/MM/AAAA">
+                </div>
+
+                <div>
+                    <h3 class="usuario">Nome de Usuário:</h3>
+                    <input type="text" id="login_user">
+                </div>
+
+                <div>
+                    <h3 class="senha">Senha:</h3>
+                    <input type="password" id="senha_user">
+                </div>
+
+                <div>
+                    <h3 class="confirmar_senha">Confirmar Senha:</h3>
+                    <input type="password" id="senha_user">
+                </div><br>
+
+                <button onclick="acessarLogin()">
+                    Cadastrar-se
+                </button>
+
+            </div>
+
+            <div class="coluna2">
+
+                <h2>Já possui um cadastro?</h2><br><br>
+
+                <h3>Então faça seu login aqui:</h3>
+
+                <button onclick="acessarLogin()">
+                    Login
+                </button>
+            
+            </div>
+
+        </div>
+
+    </div>
 
 </body>
 </html>
+
+<script>
+
+    function acessarLogin() {
+        window.location.href = '../Login/login.html';
+    }
+
+</script>

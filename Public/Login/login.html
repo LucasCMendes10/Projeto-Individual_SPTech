@@ -14,7 +14,43 @@
             onclick="voltarHome()">
     </div>
 
-    <div class="main"></div>
+    <div class="main">
+
+        <div class="container">
+
+            <div class="coluna1">
+
+                <h2>Ainda não tem um login?</h2><br><br>
+
+                <h3>Então se cadastre aqui:</h3>
+
+                <button onclick="acessarCadastro()">
+                    Cadastrar-se
+                </button>
+
+            </div>
+
+            <div class="coluna2">
+
+                <div>
+                    <h3 class="usuario">Nome de Usuário:</h3>
+                    <input type="text" id="login_user">
+                </div>
+
+                <div>
+                    <h3 class="senha">Senha:</h3>
+                    <input type="password" id="senha_user">
+                </div>
+
+                <button>
+                    Login
+                </button>
+            
+            </div>
+
+        </div>
+
+    </div>
 
 </body>
 </html>
@@ -23,6 +59,10 @@
 
     function voltarHome() {
         window.location.href = '../Home/index.html';
+    }
+
+    function acessarCadastro() {
+        window.location.href = '../Cadastro/cadastro.html';
     }
 
 </script>

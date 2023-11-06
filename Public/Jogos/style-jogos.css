@@ -67,6 +67,7 @@ a {
 
 .main {
     height: 100%;
+    width: 100%;
 }
 
 .selecao {
@@ -141,4 +142,45 @@ button:hover {
     transform: scale(1.06);
     background-color: #eaeaea;
     color: #161616;
+}
+
+.sobre-jogos {
+    height: 100%;
+}
+
+.sobre-jogos .descricao {
+    padding: 30px;
+}
+
+.sobre-jogos #hist_curta {
+    background-color: #4778A0;
+    height: 50%;
+    display: flex;
+}
+
+.sobre-jogos #hist_curta .coluna1 {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+}
+
+.sobre-jogos #hist_curta .coluna1 h2 {
+    align-self: flex-start;
+    font-size: 1.7rem;
+    margin-left: 16px;
+}
+
+.sobre-jogos #hist_curta .coluna1 p {
+    padding: 20px;
+    font-size: 1.1rem;
+}
+
+.sobre-jogos #hist_curta .coluna1 button {
+    margin-left: 20px;
+}
+
+.sobre-jogos #hist_curta .coluna2 {
+    width: 50%;
 }
