@@ -10,7 +10,7 @@ html, body {
 }
 
 .header {
-    height: 15%;
+    height: 10%;
 }
 
 .header img {
@@ -24,10 +24,12 @@ html, body {
 }
 
 .main {
-    height: 85%;
+    height: 90%;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url(../assets/Imagens-Login_Cadastro/background-login.jpg);
+    background-size: cover;
 }
 
 .container {
