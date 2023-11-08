@@ -1,10 +1,10 @@
 {
-  "name": "site",
+  "name": "storytellers",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node ./site/app.js",
-    "dev": "cd site && npm run dev",
-    "postinstall": "cd site && npm install"
+    "start": "node ./StoryTellers/app.js",
+    "dev": "cd StoryTellers && npm run dev",
+    "postinstall": "cd StoryTellers && npm install"
   }
 }
