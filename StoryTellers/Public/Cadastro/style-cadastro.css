@@ -7,6 +7,8 @@
 html, body {
     height: 100%;
     background-color: #dfdfdf;
+    background-image: url(../assets/Imagens-Login_Cadastro/background-login.jpg);
+    background-size: cover;
 }
 
 .header {
@@ -17,6 +19,7 @@ html, body {
     cursor: pointer;
     transition: all .2s ease-out;
     margin-left: 20px;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7492%) hue-rotate(303deg) brightness(103%) contrast(105%);
 }
 
 .header img:hover {
@@ -28,8 +31,6 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(../assets/Imagens-Login_Cadastro/background-login.jpg);
-    background-size: cover;
 }
 
 .container {
