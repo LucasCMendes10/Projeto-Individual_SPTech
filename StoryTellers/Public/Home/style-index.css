@@ -81,11 +81,11 @@ a {
     width: 100%;
 }
 
-.container .coluna1 {
+.header .container .coluna1 {
     width: 50%;
 }
 
-.container .coluna2 {
+.header .container .coluna2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -94,13 +94,13 @@ a {
     color: white
 }
 
-.container .coluna2 p {
+.header .container .coluna2 p {
     width: 400px;
     font-size: 1.2rem;
     margin-top: 28px;
 }
 
-.container .coluna2 button {
+.header .container .coluna2 button {
     margin-top: 28px;
     padding: 18px 22px;
     border: none;
@@ -113,7 +113,7 @@ a {
     transition: all .2s ease-out;
 }
 
-.container .coluna2 button:hover {
+.header .container .coluna2 button:hover {
     transform: scale(1.06);
     background-color: #161616;
     color: #eaeaea;
@@ -123,9 +123,38 @@ a {
     display: flex;
 }
 
+.main #saiba_mais .container .coluna2 {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
+.main #saiba-mais .container .coluna1 {
+    background-color: #202020;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    color: white
+}
+
+.main #saiba-mais .container .coluna1 h1 {
+    width: 500px;
+    font-size: 1.5rem;
+}
+
+.main #saiba-mais .container .coluna1 p {
+    width: 500px;
+    font-size: 1rem;
+}
+
 .main #sobre_mim .container .coluna1 {
     display: flex;
     justify-content: center;
+    width: 50%;
 }
 
 .main #sobre_mim .container .fundo-sobre-mim {
@@ -150,6 +179,12 @@ a {
     background-color: #202020;
     color: white;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    color: white
 }
 
 .main #sobre_mim .container .coluna2 h1 {
