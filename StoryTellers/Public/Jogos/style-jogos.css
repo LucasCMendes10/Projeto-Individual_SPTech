@@ -77,7 +77,7 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    padding-top: 35px;
+    padding-top: 63px;
     background-image: url(../assets/Imagens-Jogos/background-selecao.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -93,10 +93,9 @@ a {
     justify-content: space-between;
 }
 
-.card {
-    background-color: white;
+.cards .card {
     border-radius: 20px;
-    height: 400px;
+    height: 500px;
     width: 370px;
     display: flex;
     flex-direction: column;
@@ -142,6 +141,48 @@ button:hover {
     transform: scale(1.06);
     background-color: #eaeaea;
     color: #161616;
+}
+
+.jogo1 {
+    display: flex;
+    align-items: center;
+    background-color: #414856;
+}
+
+.jogo1 h2 {
+    color: white;
+}
+
+.jogo1 .capaV {
+    margin-top: 10px;
+    margin-bottom: 10px ;
+    background-image: url(../assets/Imagens-Jogos/capa_jogo_O_Viajante.jpg);
+    background-size: cover;
+    height: 100vh;
+    width: 16.2vw;
+}
+
+.jogo1 button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    user-select: none;
+    cursor: pointer;
+    background-color: #516878;
+    color: #eaeaea;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all .2s ease-out;
+}
+
+.jogo1 button:hover {
+    transform: scale(1.06);
+    background-color: #628B96;
+    color: #161616;
+}
+
+.jogo2 {
+    background-color: white;
 }
 
 .sobre-jogos {
