@@ -90,7 +90,7 @@ a {
 .selecao .cards {
     width: 60%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .cards .card {
@@ -186,7 +186,7 @@ button:hover {
 }
 
 .sobre-jogos {
-    height: 100%;
+    height: 50%;
 }
 
 .sobre-jogos .descricao {
@@ -195,7 +195,7 @@ button:hover {
 
 .sobre-jogos #hist_curta {
     background-color: #4778A0;
-    height: 50%;
+    height: 100%;
     display: flex;
 }
 
