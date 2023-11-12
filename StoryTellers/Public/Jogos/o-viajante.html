@@ -8,45 +8,83 @@
     <link rel="stylesheet" href="style-viajante.css">
 </head>
 
-<body>
+<body id="body">
     <div id="tela">
-        <div class="header">
-            <img src="../assets/Imagens-Jogos/seta-esquerda.png"
-                alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
-                onclick="voltarJogos()">
-        </div>
-
-        <div class="menu">
-            <h1>O Viajante</h1>
-
-            <button onclick="abrirCaixaConfirmacao()">
-                Novo Jogo
-            </button><br>
-
-            <button onclick="loadGame()">
-                Carregar Jogo
-            </button><br>
-
-            <button>
-                Estatísticas
-            </button><br>
-
-            <button onclick="mostrarCreditos()">
-                Créditos
-            </button><br>
+        <div id="menu_jogo">
+            <div class="header">
+                <img src="../assets/Imagens-Jogos/seta-esquerda.png"
+                    alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
+                    onclick="voltarJogos()">
+            </div>
+    
+            <div class="menu">
+                <div class="titulo">
+                    <h1>O Viajante</h1>
+                </div>
+    
+                <div class="botoes-jogo">
+                    <button onclick="abrirCaixaConfirmacao()">
+                        Novo Jogo
+                    </button><br>
+    
+                    <button onclick="loadGame()">
+                        Carregar Jogo
+                    </button><br>
+    
+                    <button>
+                        Estatísticas
+                    </button><br>
+    
+                    <button onclick="mostrarCreditos()">
+                        Créditos
+                    </button><br>
+                </div>
+            </div>
         </div>
 
         <div id="tela_de_fundo" class="background">
             <div id="caixa_confirmacao" class="caixa">
                 <p>Tem certeza que quer iniciar um novo jogo?</p>
-    
-                <button onclick="newGame()">
-                    Novo Jogo
-                </button>
-    
-                <button onclick="fecharCaixaConfirmacao()">
-                    Cancelar
-                </button>
+
+                <div class="botoes">
+                    <button onclick="fecharCaixaConfirmacao()">
+                        Cancelar
+                    </button>
+
+                    <button onclick="newGame()">
+                        Novo Jogo
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="creditos">
+            <div class="header">
+                <img src="../assets/Imagens-Jogos/seta-esquerda.png"
+                    alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
+                    onclick="voltarMenuCredito()">
+            </div>
+
+            <div class="credito">
+                <h1>
+                    Créditos
+                </h1>
+
+                <p>
+                    <div class="parte-credito">
+                        <b>Desenvolvido por</b> Lucas Carvalho Mendes
+                    </div>
+                    <div class="parte-credito">
+                        <b>Escrito por </b> Lucas Carvalho Mendes
+                    </div>
+                    <div class="parte-credito">
+                        <b>Feito em</b> JavaScript, HTML e css
+                    </div>
+                    <div class="parte-credito">
+                        <b>Agradecimento </b> Leonardo Santos
+                    </div>
+                </p>
             </div>
         </div>
     </div>
@@ -405,26 +443,28 @@
 
     var tela1 = `
         <div class="header">
-        <img src="../assets/Imagens-Jogos/seta-esquerda.png"
-        alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
-        onclick="voltarMenu()">
+            <img src="../assets/Imagens-Jogos/seta-esquerda.png"
+            alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
+            onclick="voltarMenu()">
         </div>
 
-        <p>Um jovem, chamado Leonardo, estava em mais um dia comum da sua vida. Ele voltava para sua casa em um trem, até que de repente...<br>
+        <div class ="tela">
+            <p>Um jovem, chamado Leonardo, estava em mais um dia comum da sua vida. Ele voltava para sua casa em um trem, até que de repente...<br>
             
             Um portal se abre na sua frente, todos no trem ficam assustados e Leonardo vê um homem surgindo no portal e estendendo sua mão para fora. Esse homem diz, com um tom de urgência:<br>
             
             - Rápido, venha comigo! Eu preciso da sua ajuda, AGORA!<br>
             
-        Leo se assusta com o recado do homem e então, perante essa situação, ele decide...</p><br>
+            Leo se assusta com o recado do homem e então, perante essa situação, ele decide...</p><br>
         
-        <button id="caminho1" value="1" onclick="verificarCaminho(this)">
-            Decide recusar o pedido do homem
+            <button id="caminho1" value="1" onclick="verificarCaminho(this)">
+                Decide recusar o pedido do homem
             </button>
             <button id="caminho2" value="2" onclick="verificarCaminho(this)">
                 Decide aceitar o pedido do homem
-                </button>
-                `
+            </button>
+        </div>
+        `
 
     var telas = [tela1, tela2, tela3, tela4, tela5, tela6, tela7, tela8, tela9, tela10, tela11, tela12, tela13, tela14, tela15, tela16, tela17, tela18]
 
@@ -438,69 +478,96 @@
 
     function voltarMenu() {
         tela.innerHTML = `
-        <div class="header">
-            <img src="../assets/Imagens-Jogos/seta-esquerda.png"
-                alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
-                onclick="voltarJogos()">
-        </div>
-
-        <div class="menu">
-            <h1>O Viajante</h1>
-
-            <button onclick="abrirCaixaConfirmacao()">
-                Novo Jogo
-            </button><br>
-
-            <button onclick="loadGame()">
-                Carregar Jogo
-            </button><br>
-
-            <button>
-                Estatísticas
-            </button><br>
-
-            <button onclick="mostrarCreditos()">
-                Créditos
-            </button><br>
+        <div id="menu_jogo">
+            <div class="header">
+                <img src="../assets/Imagens-Jogos/seta-esquerda.png"
+                    alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
+                    onclick="voltarJogos()">
+            </div>
+    
+            <div class="menu">
+                <div class="titulo">
+                    <h1>O Viajante</h1>
+                </div>
+    
+                <div class="botoes-jogo">
+                    <button onclick="abrirCaixaConfirmacao()">
+                        Novo Jogo
+                    </button><br>
+    
+                    <button onclick="loadGame()">
+                        Carregar Jogo
+                    </button><br>
+    
+                    <button>
+                        Estatísticas
+                    </button><br>
+    
+                    <button onclick="mostrarCreditos()">
+                        Créditos
+                    </button><br>
+                </div>
+            </div>
         </div>
 
         <div id="tela_de_fundo" class="background">
             <div id="caixa_confirmacao" class="caixa">
                 <p>Tem certeza que quer iniciar um novo jogo?</p>
-    
-                <button onclick="newGame()">
-                    Novo Jogo
-                </button>
-    
-                <button onclick="fecharCaixaConfirmacao()">
-                    Cancelar
-                </button>
+
+                <div class="botoes">
+                    <button onclick="fecharCaixaConfirmacao()">
+                        Cancelar
+                    </button>
+
+                    <button onclick="newGame()">
+                        Novo Jogo
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="creditos">
+            <div class="header">
+                <img src="../assets/Imagens-Jogos/seta-esquerda.png"
+                    alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
+                    onclick="voltarMenuCredito()">
+            </div>
+
+            <div class="credito">
+                <h1>
+                    Créditos
+                </h1>
+
+                <p>
+                    <div class="parte-credito">
+                        <b>Desenvolvido por</b> Lucas Carvalho Mendes
+                    </div>
+                    <div class="parte-credito">
+                        <b>Escrito por </b> Lucas Carvalho Mendes
+                    </div>
+                    <div class="parte-credito">
+                        <b>Feito em</b> JavaScript, HTML e css
+                    </div>
+                    <div class="parte-credito">
+                        <b>Agradecimento </b> Leonardo Santos
+                    </div>
+                </p>
             </div>
         </div>
         `
     }
 
+    function voltarMenuCredito() {
+        creditos.style.display = 'none';
+        menu_jogo.style.display = "block";
+        body.style.backgroundImage = 'linear-gradient(90deg, rgba(0,0,0,0.5) 22%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.5) 82%), url(../assets/Imagens-Jogos/background-menu-Viajante.jpg)'; 
+    }
+
     function mostrarCreditos() {
-        tela.innerHTML = `
-        <div class="header">
-        <img src="../assets/Imagens-Jogos/seta-esquerda.png"
-            alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
-            onclick="voltarMenu()">
-    </div>
-
-    <div>
-        <h1>
-            Créditos:
-        </h1>
-
-        <p>
-            <b>Desenvolvido por:</b><br> Lucas Carvalho Mendes<br>
-            <b>Escrito por: </b><br> Lucas Carvalho Mendes<br><br>
-            <b>Feito em:</b><br> JavaScript, HTML e css<br><br>
-            <b>Agradecimento: </b><br> Leonardo Santos
-        </p>
-    </div>
-        `
+        menu_jogo.style.display = "none";
+        creditos.style.display = 'block';
+        body.style.backgroundImage = 'linear-gradient(90deg, rgba(0,0,0,0.1) 22%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.1) 82%), url(../assets/Imagens-Jogos/background-menu-Viajante.jpg)';
     }
 
     function newGame() {
@@ -528,13 +595,13 @@
             tela.innerHTML = telas[1];
             tela_atual = telas[1];
         }
-        
+
         // Final Mundano
         else if (tela_atual == telas[1] && escolha == 1) {
             tela.innerHTML = telas[17];
             tela_atual = telas[17];
         }
-        
+
         else if (tela_atual == telas[0] && escolha == 2) {
             tela.innerHTML = telas[2];
             tela_atual = telas[2];

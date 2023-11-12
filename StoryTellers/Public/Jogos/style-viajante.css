@@ -1,10 +1,26 @@
+@font-face {
+    font-family: Florensa;
+    src: url(../assets/Fontes/Florensa-Demo.ttf);
+}
+
 * {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
     padding: 0;
 }
 
 html, body {
+    height: 100%;
+    background-image: linear-gradient(90deg, rgba(0,0,0,0.5) 22%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.5) 82%), url(../assets/Imagens-Jogos/background-menu-Viajante.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#menu_jogo {
+    height: 100%;
+}
+
+#tela {
     height: 100%;
 }
 
@@ -12,10 +28,35 @@ html, body {
     cursor: pointer;
     transition: all .2s ease-out;
     margin-left: 20px;
+    filter: brightness(0) saturate(100%) invert(99%) sepia(1%) saturate(3383%) hue-rotate(193deg) brightness(114%) contrast(84%);
 }
 
 .header img:hover {
     transform: scale(1.1);
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 75%;
+    margin-right: 10px;
+}
+
+.titulo {
+    font-size: 1.3rem;
+    color: #161616;
+}
+
+.titulo h1 {
+    font-family: Florensa;
+}
+
+.botoes-jogo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .background {
@@ -34,13 +75,78 @@ html, body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 500px;
-    width: 500px;
+    height: 212px;
+    width: 450px;
     border-radius: 16px;
-    color: white;
-    background-color: rgb(26, 26, 114);
+    background-color: #a0a0a0;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    padding: 0 6px;
 }
+
+.caixa p {
+    font-size: 1.2rem;
+}
+
+.caixa .botoes {
+    margin-top: 40px;
+}
+
+.botoes button:nth-child(1) {
+    margin-right: 8px;
+}
+
+.botoes button:nth-child(2) {
+    margin-left: 8px;
+}
+
+
+button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    user-select: none;
+    cursor: pointer;
+    background-color: #161616;
+    color: #eaeaea;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all .2s ease-out;
+}
+
+button:hover {
+    transform: scale(1.06);
+    background-color: #eaeaea;
+    color: #161616;
+}
+
+#creditos {
+    display: none;
+    height: 100%;
+}
+
+.credito {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 75%;
+    font-size: 1.3rem;
+    color: #f5f2f2;
+}
+
+.credito h1 {
+    margin-bottom: 20px;
+}
+
+.parte-credito {
+    display: flex;
+    flex-direction: column;
+    margin-top: 18px;
+    text-align: center;
+}
+
+/* CSS das tela do jogo */
+
