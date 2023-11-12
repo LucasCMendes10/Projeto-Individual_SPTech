@@ -11,9 +11,6 @@
 
 html, body {
     height: 100%;
-    background-image: linear-gradient(90deg, rgba(0,0,0,0.5) 22%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.5) 82%), url(../assets/Imagens-Jogos/background-menu-Viajante.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 #menu_jogo {
@@ -22,6 +19,13 @@ html, body {
 
 #tela {
     height: 100%;
+    background-image: linear-gradient(90deg, rgba(0,0,0,0.5) 22%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.5) 82%), url(../assets/Imagens-Jogos/background-menu-Viajante.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header {
+    height: 10%;
 }
 
 .header img {
@@ -150,3 +154,18 @@ button:hover {
 
 /* CSS das tela do jogo */
 
+.tela-jogo {
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* .escolhas {
+
+}
+
+.escolha {
+
+} */

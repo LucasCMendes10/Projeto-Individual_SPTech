@@ -448,7 +448,7 @@
             onclick="voltarMenu()">
         </div>
 
-        <div class ="tela">
+        <div class ="tela-jogo">
             <p>Um jovem, chamado Leonardo, estava em mais um dia comum da sua vida. Ele voltava para sua casa em um trem, até que de repente...<br>
             
             Um portal se abre na sua frente, todos no trem ficam assustados e Leonardo vê um homem surgindo no portal e estendendo sua mão para fora. Esse homem diz, com um tom de urgência:<br>
@@ -457,12 +457,14 @@
             
             Leo se assusta com o recado do homem e então, perante essa situação, ele decide...</p><br>
         
-            <button id="caminho1" value="1" onclick="verificarCaminho(this)">
-                Decide recusar o pedido do homem
-            </button>
-            <button id="caminho2" value="2" onclick="verificarCaminho(this)">
-                Decide aceitar o pedido do homem
-            </button>
+            <div class="escolhas">
+                <button id="caminho1" value="1" onclick="verificarCaminho(this)">
+                    Decide recusar o pedido do homem
+                </button>
+                <button id="caminho2" value="2" onclick="verificarCaminho(this)">
+                    Decide aceitar o pedido do homem
+                </button>
+            </div>
         </div>
         `
 
@@ -477,6 +479,8 @@
     }
 
     function voltarMenu() {
+        tela.style.backgroundImage = 'linear-gradient(90deg, rgba(0,0,0,0.5) 22%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.5) 82%), url(../assets/Imagens-Jogos/background-menu-Viajante.jpg)';
+
         tela.innerHTML = `
         <div id="menu_jogo">
             <div class="header">
@@ -572,6 +576,7 @@
 
     function newGame() {
         tela_atual = telas[0];
+        tela.style.backgroundImage = 'none';
         tela.innerHTML = telas[0];
         localStorage.removeItem('save');
 
@@ -592,95 +597,113 @@
         var escolha = Number(botao.value);
 
         if (tela_atual == telas[0] && escolha == 1) {
+            tela.style.backgroundImage = 'none';
             tela.innerHTML = telas[1];
             tela_atual = telas[1];
         }
 
         // Final Mundano
         else if (tela_atual == telas[1] && escolha == 1) {
+            tela.style.backgroundImage = 'none';
             tela.innerHTML = telas[17];
             tela_atual = telas[17];
         }
 
         else if (tela_atual == telas[0] && escolha == 2) {
+            tela.style.backgroundImage = 'none';
             tela.innerHTML = telas[2];
             tela_atual = telas[2];
         }
 
         else if (tela_atual == telas[2] && escolha == 1) {
+            tela.style.backgroundImage = 'none';
             tela.innerHTML = telas[3];
             tela_atual = telas[3];
         }
 
         else if (tela_atual == telas[3] && escolha == 1) {
+            tela.style.backgroundImage = 'none';
             tela.innerHTML = telas[4];
             tela_atual = telas[4];
         }
 
         else if (tela_atual == telas[4] && escolha == 1) {
+            tela.style.backgroundImage = 'none';
             tela.innerHTML = telas[5];
             tela_atual = telas[5];
         }
 
         else if (tela_atual == telas[5] && escolha == 1) {
+            tela.style.backgroundImage = 'none';
             tela.innerHTML = telas[6];
             tela_atual = telas[6];
         }
 
         else if (tela_atual == telas[6] && escolha == 1) {
+            tela.style.backgroundImage = 'none';
             tela.innerHTML = telas[7];
             tela_atual = telas[7];
         }
 
         // Final Confinado
         else if (tela_atual == telas[7] && escolha == 1) {
+            tela.style.backgroundImage = 'none';
             tela.innerHTML = telas[16];
             tela_atual = telas[16];
         }
 
         else if (tela_atual == telas[3] && escolha == 2) {
+            tela.style.backgroundImage = 'none';
             tela.innerHTML = telas[8];
             tela_atual = telas[8];
         }
 
         else if (tela_atual == telas[8] && escolha == 1) {
+            tela.style.backgroundImage = 'none';
             tela.innerHTML = telas[9];
             tela_atual = telas[9];
         }
 
         else if (tela_atual == telas[9] && escolha == 1) {
+            tela.style.backgroundImage = 'none';
             tela.innerHTML = telas[10];
             tela_atual = telas[10];
         }
 
         else if (tela_atual == telas[10] && escolha == 1) {
+            tela.style.backgroundImage = 'none';
             tela.innerHTML = telas[11];
             tela_atual = telas[11];
         }
 
         else if (tela_atual == telas[11] && escolha == 1) {
+            tela.style.backgroundImage = 'none';
             tela.innerHTML = telas[12];
             tela_atual = telas[12];
         }
 
         else if (tela_atual == telas[12] && escolha == 1) {
+            tela.style.backgroundImage = 'none';
             tela.innerHTML = telas[13];
             tela_atual = telas[13];
         }
 
         // Final Épico - 1
         else if (tela_atual == telas[13] && escolha == 1) {
+            tela.style.backgroundImage = 'none';
             tela.innerHTML = telas[15];
             tela_atual = telas[15];
         }
 
         else if (tela_atual == telas[12] && escolha == 2) {
+            tela.style.backgroundImage = 'none';
             tela.innerHTML = telas[14];
             tela_atual = telas[14];
         }
 
         // Final Épico - 2
         else if (tela_atual == telas[14] && escolha == 1) {
+            tela.style.backgroundImage = 'none';
             tela.innerHTML = telas[15];
             tela_atual = telas[15];
         }
