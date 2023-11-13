@@ -20,7 +20,7 @@ html, body {
 }
 
 body::-webkit-scrollbar {
-  width: 8px;
+    width: 8px;
 }
 
 body::-webkit-scrollbar-thumb {
@@ -70,13 +70,8 @@ a {
     font-size: 0.9rem;
 }
 
-.main {
-    height: 100%;
-    width: 100%;
-}
-
 .selecao {
-    height: 95%;
+    height: 700px;
     background-color: #eaeaea;
     display: flex;
     flex-direction: column;
@@ -230,4 +225,25 @@ button:hover {
 
 .sobre-jogos #hist_curta .coluna2 {
     width: 50%;
+}
+
+.footer {
+    border-top: solid 1px;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer p {
+    margin-left: 30px;
+}
+
+.footer .redes {
+    margin-right: 70px;
+}
+
+.footer .redes img {
+    width: 28px;
+    cursor: pointer;
 }
