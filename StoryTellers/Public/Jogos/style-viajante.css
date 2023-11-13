@@ -155,17 +155,34 @@ button:hover {
 /* CSS das tela do jogo */
 
 .tela-jogo {
-    height: 90%;
+    height: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-/* .escolhas {
-
+.tela-jogo p {
+    text-align: start;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    width: 700px;
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
-.escolha {
+/* .escolhas {
+
+} */
+
+.escolhas button:nth-child(1) {
+    margin-right: 10px;
+}
+
+.escolhas button:nth-child(2) {
+    margin-left: 10px;
+}
+
+/* .escolha {
 
 } */
