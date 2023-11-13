@@ -80,6 +80,8 @@ html, body {
     align-items: center;
     padding: 100px 40px;
     color: white;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
 }
 
 .coluna1 h2 {
@@ -99,6 +101,8 @@ h3 {
     align-items: center;
     padding: 40px;
     color: white;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
 }
 
 .coluna2 .usuario {
