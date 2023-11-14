@@ -5,11 +5,12 @@ create table usuario (
 idUsuario int primary key auto_increment,
 nomeCompleto varchar(60) not null,
 dtNasc date not null,
-nomeUsuario varchar(30) not null,
+nomeUsuario varchar(30) not null unique,
 senha varchar(45) not null
 );
 
 select * from usuario;
+SELECT nomeUsuario from usuario;
 
 create table avaliacao (
 idAvaliacao int primary key auto_increment,

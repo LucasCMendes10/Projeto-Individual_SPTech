@@ -30,7 +30,7 @@
 
                 <div>
                     <h3 class="dtNasc">Data de Nascimento:</h3>
-                    <input id="dtNasc_input" type="text" id="dtNasc_user" placeholder="DD/MM/AAAA">
+                    <input id="dtNasc_input" type="date" id="dtNasc_user" placeholder="DD/MM/AAAA">
                 </div>
 
                 <div>
@@ -67,7 +67,7 @@
             </div>
 
         </div>
-        
+
         <div id="alerta_erro" class="alerta_erro">
             <div id="cardErro">
                 <span id="mensagem_erro"></span>
@@ -93,41 +93,65 @@
         var senha_user = senha_usuario_input.value;
         var confirmar_senha = confirmacao_senha_input.value;
 
-        fetch("/usuarios/cadastrar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                nomeCompletoServer: nome_completo,
-                dtNascServer: dtNasc,
-                nomeUsuarioServer: nome_user,
-                senhaServer: senha_user
-            }),
-        })
-            .then(function (resposta) {
-            console.log("resposta");
+        if (nome_completo == '') {
+            alerta_erro.style.display = 'block';
+            cardErro.style.display = 'flex';
 
-            if (resposta.ok) {
-                cardErro.style.display = 'flex';
+            mensagem_erro.innerHTML = "O campo do nome está inválido!";
+        } else if (dtNasc == '') {
+            alerta_erro.style.display = 'block';
+            cardErro.style.display = 'flex';
 
-                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando à tela de Login...";
+            mensagem_erro.innerHTML = "O campo da data de nascimento está inválido!";
+        } else if (nome_user == '') {
+            alerta_erro.style.display = 'block';
+            cardErro.style.display = 'flex';
 
-                setTimeout(() => {
-                    window.location = '../Login/login.html';
-                }, "2000");
+            mensagem_erro.innerHTML = "O campo de nome de usuário está inválido!";
+        } else if (senha_user == '' || senha_user.length <= 5) {
+            alerta_erro.style.display = 'block';
+            cardErro.style.display = 'flex';
 
-                limparFormulario();
-                finalizarAguardar();
-            } else {
-                throw "Houve um erro ao tentar realizar o cadastro!";
-            }
-        })
-        
-        .catch (function(resposta) {
-            console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
-        })
+            mensagem_erro.innerHTML = "O campo de senha está inválido! (no mínimo 6 caracteres)";
+        } else if (confirmar_senha == '' || confirmar_senha != senha_user) {
+            alerta_erro.style.display = 'block';
+            cardErro.style.display = 'flex';
+
+            mensagem_erro.innerHTML = "O campo de confirmar senha está inválido! (a senha precisa ser a mesma do campo anterior)";
+        } else {
+            fetch("/usuarios/cadastrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    nomeCompletoServer: nome_completo,
+                    dtNascServer: dtNasc,
+                    nomeUsuarioServer: nome_user,
+                    senhaServer: senha_user
+                }),
+            })
+                .then(function (resposta) {
+                    console.log("resposta");
+
+                    if (resposta.status == 201) {
+                        alerta_erro.style.display = 'block';
+                        cardErro.style.display = 'flex';
+                        mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando à tela de Login...";
+
+                        setTimeout(() => {
+                            window.location = '../Login/login.html';
+                        }, "2000");
+                    } else {
+                        resposta.text().then(texto => {
+                        alerta_erro.style.display = 'block';
+                        cardErro.style.display = 'flex';
+                        mensagem_erro.innerHTML = texto;
+                        });
+                    }
+                })
+        }
+
     }
 
 </script>
