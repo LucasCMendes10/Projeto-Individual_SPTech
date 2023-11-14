@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <link rel="stylesheet" href="style-cadastro.css">
+    <script src="../js/sessao.js"></script>
 </head>
+
 <body>
 
     <div class="header">
@@ -22,30 +25,30 @@
 
                 <div>
                     <h3 class="nome_completo">Nome Completo:</h3>
-                    <input type="text" id="nome_user" placeholder="Ex: Alan Moore">
+                    <input id="nome_completo_input" type="text" id="nome_user" placeholder="Ex: Alan Moore">
                 </div>
 
                 <div>
                     <h3 class="dtNasc">Data de Nascimento:</h3>
-                    <input type="text" id="dtNasc_user" placeholder="DD/MM/AAAA">
+                    <input id="dtNasc_input" type="text" id="dtNasc_user" placeholder="DD/MM/AAAA">
                 </div>
 
                 <div>
                     <h3 class="usuario">Nome de Usuário:</h3>
-                    <input type="text" id="login_user" placeholder="Mago_das_HQs80">
+                    <input id="nome_usuario_input" type="text" id="login_user" placeholder="Mago_das_HQs80">
                 </div>
 
                 <div>
                     <h3 class="senha">Senha:</h3>
-                    <input type="password" id="senha_user" placeholder="••••••••">
+                    <input id="senha_usuario_input" type="password" id="senha_user" placeholder="••••••••">
                 </div>
 
                 <div>
                     <h3 class="confirmar_senha">Confirmar Senha:</h3>
-                    <input type="password" id="senha_user" placeholder="••••••••">
+                    <input id="confirmacao_senha_input" type="password" id="senha_user" placeholder="••••••••">
                 </div><br>
 
-                <button onclick="acessarLogin()">
+                <button onclick="realizarCadastro()">
                     Cadastrar-se
                 </button>
 
@@ -60,20 +63,71 @@
                 <button onclick="acessarLogin()">
                     Login
                 </button>
-            
+
             </div>
 
+        </div>
+        
+        <div id="alerta_erro" class="alerta_erro">
+            <div id="cardErro">
+                <span id="mensagem_erro"></span>
+            </div>
         </div>
 
     </div>
 
 </body>
+
 </html>
 
 <script>
 
     function acessarLogin() {
         window.location.href = '../Login/login.html';
+    }
+
+    function realizarCadastro() {
+        var nome_completo = nome_completo_input.value;
+        var dtNasc = dtNasc_input.value;
+        var nome_user = nome_usuario_input.value;
+        var senha_user = senha_usuario_input.value;
+        var confirmar_senha = confirmacao_senha_input.value;
+
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                nomeCompletoServer: nome_completo,
+                dtNascServer: dtNasc,
+                nomeUsuarioServer: nome_user,
+                senhaServer: senha_user
+            }),
+        })
+            .then(function (resposta) {
+            console.log("resposta");
+
+            if (resposta.ok) {
+                cardErro.style.display = 'flex';
+
+                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando à tela de Login...";
+
+                setTimeout(() => {
+                    window.location = '../Login/login.html';
+                }, "2000");
+
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw "Houve um erro ao tentar realizar o cadastro!";
+            }
+        })
+        
+        .catch (function(resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        })
     }
 
 </script>

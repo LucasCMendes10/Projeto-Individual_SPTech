@@ -129,3 +129,31 @@ h3 {
     margin-top: 8px;
     margin-bottom: 12px;
 }
+
+.alerta_erro {
+    display: none;
+    justify-content: flex-end;
+    margin-top: 100px;
+}
+
+#cardErro {
+    display: none;
+    background-color: #fff;
+    width: 300px;
+    height: 200px;
+    position: fixed;
+    right: 30px;
+    border-radius: 30px;
+    top: 50px;
+    background-color: #040444;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & #mensagem_erro {
+        color: white;
+        margin: 2px;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+}
