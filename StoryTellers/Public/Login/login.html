@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="style-login.css">
 </head>
+
 <body>
 
     <div class="header">
@@ -34,35 +36,75 @@
 
                 <div>
                     <h3 class="usuario">Nome de Usuário:</h3>
-                    <input type="text" id="login_user">
+                    <input type="text" id="nome_usuario_input">
                 </div>
 
                 <div>
                     <h3 class="senha">Senha:</h3>
-                    <input type="password" id="senha_user">
+                    <input type="password" id="senha_usuario_input">
                 </div>
 
-                <button>
+                <button onclick="autenticarLogin()">
                     Login
                 </button>
-            
+
             </div>
 
+        </div>
+
+        <div id="alerta_erro" class="alerta_erro">
+            <div id="cardErro">
+                <span id="mensagem_erro"></span>
+            </div>
         </div>
 
     </div>
 
 </body>
+
 </html>
 
 <script>
 
     function voltarHome() {
-        window.location.href = '../Home/index.html';
+        window.location.href = '../index.html';
     }
 
     function acessarCadastro() {
         window.location.href = '../Cadastro/cadastro.html';
+    }
+
+    function autenticarLogin() {
+        var nome_user = nome_usuario_input.value;
+        var senha_user = senha_usuario_input.value;
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                nomeUsuarioServer: nome_user,
+                senhaServer: senha_user
+            }),
+        })
+            .then(function (resposta) {
+
+                if (resposta.status == 201) {
+                    resposta.json().then(res => {
+                        sessionStorage.setItem('idUsuario', res[0].idUsuario);
+                        sessionStorage.setItem('nomeUsuario', res[0].nomeUsuario);
+                        window.location = '../index.html';
+                    })
+
+                } else {
+                    resposta.text().then(texto => {
+                        alerta_erro.style.display = 'block';
+                        cardErro.style.display = 'flex';
+                        mensagem_erro.innerHTML = texto;
+                    });
+                }
+            })
     }
 
 </script>

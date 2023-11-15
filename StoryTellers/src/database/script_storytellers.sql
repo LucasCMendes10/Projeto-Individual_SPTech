@@ -9,9 +9,6 @@ nomeUsuario varchar(30) not null unique,
 senha varchar(45) not null
 );
 
-select * from usuario;
-SELECT nomeUsuario from usuario;
-
 create table avaliacao (
 idAvaliacao int primary key auto_increment,
 qtdEstrela int,

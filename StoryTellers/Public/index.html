@@ -9,7 +9,7 @@
 <body>
     <div class="header">
 
-        <div class="navbar">
+        <div class="navbar" id="navbar">
             <h1>
                 <a href="#inicio_site">
                     StoryTellers
@@ -93,7 +93,7 @@
             <div class="container">
 
                 <div class="coluna1">
-                    <h1>A Arte de Contar de Histórias</h1>
+                    <h1>A Arte de Contar Histórias</h1>
                     <p>A arte de contar histórias, portanto, transcende a mera narrativa, ela é uma manifestação sublime da criatividade e da habilidade humana de expressar emoções complexas. Os contadores de histórias detêm uma capacidade única de traduzir mensagens e sensações, conectando-se de maneira profunda com seu público. Esta forma de arte, grandiosa em sua essência, merece não apenas reconhecimento, mas também respeito e apreciação pela riqueza que adiciona à experiência humana.</p>
                 </div>
 
@@ -111,7 +111,7 @@
 
                 <div class="coluna2">
                     <h1>Os Contadores de História</h1>
-                    <p>Os contadores de histórias, com sua imaginação ilimitada e habilidade de expressar emoções, ocupam um papel grandioso no cenário da criação artística. Sua capacidade de transmitir mensagens e sentimentos por meio de narrativas é uma forma de arte única, que merece ser celebrada.<br>
+                    <p>Os contadores de história, com sua imaginação ilimitada e habilidade de expressar emoções, ocupam um papel grandioso no cenário da criação artística. Sua capacidade de transmitir mensagens e sentimentos por meio de narrativas é uma forma de arte única, que merece ser celebrada.<br>
                     Aqui está uma merecida homenagem ao mais talentoso e genial contador de histórias que tive o prazer de conhecer Alan Moore. Este prolífico escritor britânico de histórias em quadrinhos é responsável por algumas das maiores obras da indústria. Sua maestria é tão notável que uma de suas criações, "Watchmen", foi aclamada como uma das 100 obras essenciais que todos deveriam ler.
                     </p>
                 </div>
@@ -212,6 +212,59 @@
 </html>
 
 <script>
+
+    var idUsuario = sessionStorage.getItem('idUsuario');
+    var nomeUsuario = sessionStorage.getItem('nomeUsuario');
+
+    window.addEventListener('load', () => {
+        if (idUsuario) {
+            navbar.innerHTML = `
+            <h1>
+                <a href="#inicio_site">
+                    StoryTellers
+                </a>
+            </h1>
+            <ul>
+                <li>
+                    <a href="../Jogos/jogos.html">
+                        Jogar
+                    </a>
+                </li>
+                <li>
+                    <a href="#saiba_mais">
+                        Sobre
+                    </a>
+                </li>
+                <li>
+                    <a href="#sobre_mim">
+                        Sobre mim
+                    </a>
+                </li>
+                <li>
+                    <a href="#rodape">
+                        Contato
+                    </a>
+                </li>
+                <li>|</li>
+                <li>
+                    Olá, ${nomeUsuario}
+                </li>
+                <li>-</li>
+                <li>
+                    <a onclick="encerrarSessao()">
+                        Sair
+                    </a>
+                </li>
+            </ul>
+            `;
+        }
+    })
+
+    function encerrarSessao() {
+        sessionStorage.removeItem('idUsuario');
+        sessionStorage.removeItem('nomeUsuario');
+        window.location.reload();
+    }
 
     function acessarSaibaMais() {
         window.location.href = `#saiba_mais`;

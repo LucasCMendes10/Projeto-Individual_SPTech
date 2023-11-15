@@ -4,36 +4,18 @@ function autenticar(req, res) {
     var nomeUsuario = req.body.nomeUsuarioServer;
     var senha = req.body.senhaServer;
 
-    if (nomeUsuario == undefined) {
-        res.status(400).send("Seu nome de usuario está undefined!");
-    } else if (senha == undefined) {
-        res.status(400).send("Sua senha está indefinida!");
+    if (nomeUsuario == "") {
+        res.status(400).send("Insira um usuário válido!");
+    } else if (senha == "") {
+        res.status(400).send("Insira uma senha válida!");
     } else {
-
         usuarioModel.autenticar(nomeUsuario, senha)
             .then(
                 function (resultadoAutenticar) {
-                    console.log(`\nResultados encontrados: ${resultadoAutenticar.length}`);
-                    console.log(`Resultados: ${JSON.stringify(resultadoAutenticar)}`); // transforma JSON em String
-
-                    if (resultadoAutenticar.length == 1) {
-                        console.log(resultadoAutenticar);
-
-                        aquarioModel.buscarAquariosPorEmpresa(resultadoAutenticar[0].empresaId)
-                            .then((resultadoAquarios) => {
-                                if (resultadoAquarios.length > 0) {
-                                    res.json({
-                                        nomeUsuario: resultadoAutenticar[0].nomeUsuario,
-                                        senha: resultadoAutenticar[0].senha
-                                    });
-                                } else {
-                                    res.status(204).json({ aquarios: [] });
-                                }
-                            })
-                    } else if (resultadoAutenticar.length == 0) {
-                        res.status(403).send("Nome de usuario e/ou senha inválido(s)");
+                    if (resultadoAutenticar.length == 0) {
+                        res.status(400).send('Usuário e/ou senha inválidos!');
                     } else {
-                        res.status(403).send("Mais de um usuário com o mesmo login e senha!");
+                        res.status(201).json(resultadoAutenticar);
                     }
                 }
             ).catch(

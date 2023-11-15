@@ -33,6 +33,7 @@ a {
     text-decoration: none;
     color: white;
     transition: all .2s ease-out;
+    cursor: pointer;
 }
 
 .header .navbar ul li a:hover {

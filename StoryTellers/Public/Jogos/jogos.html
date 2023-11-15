@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seleção de Jogos</title>
     <link rel="stylesheet" href="style-jogos.css">
 </head>
-<body>
+
+<body id="body">
     <div class="header">
 
-        <div class="navbar">
+        <div class="navbar" id="navbar">
             <h1>
-                <a href="../Home/index.html">
+                <a href="../index.html">
                     StoryTellers
                 </a>
             </h1>
             <ul>
                 <li>
-                    <a href="../Home/index.html">
+                    <a href="../index.html">
                         Home
                     </a>
                 </li>
@@ -38,6 +40,18 @@
     </div>
 
     <div class="main">
+
+        <div id="background_aviso">
+            <div id="aviso_sem_login">
+                <p>
+                    Você precisa estar logado para jogar!
+                </p>
+    
+                <button onclick="fecharErroLogin()">
+                    Ok
+                </button>
+            </div>
+        </div>
 
         <div id="jogar" class="selecao">
             <h1>Selecione o jogo que deseja jogar</h1>
@@ -90,7 +104,13 @@
                 <div class="coluna1">
                     <h2>O Viajante:</h2>
 
-                    <p>"O Viajante" é um jogo curto de história interativa, ou seja, você escolhe os rumos que ela vai tomar. A sinopse da história é: um jovem chamado Leonardo vivia sua vida normalmente, sendo um estudante de 18 anos, no início do ensino superior, até que um dia, enquanto voltava para casa, um portal surge em sua frente, com um homem suplicando por sua ajuda! Você irá decidir quais as ações que o protagonista terá perante as situações inesperadas que irão acontecer, como por exemplo, aceitar ou não o pedido do homem misterioso. Mas lembre-se, cada escolha sua irá mudar para sempre a vida de Leonardo...</p>
+                    <p>"O Viajante" é um jogo curto de história interativa, ou seja, você escolhe os rumos que ela vai
+                        tomar. A sinopse da história é: um jovem chamado Leonardo vivia sua vida normalmente, sendo um
+                        estudante de 18 anos, no início do ensino superior, até que um dia, enquanto voltava para casa,
+                        um portal surge em sua frente, com um homem suplicando por sua ajuda! Você irá decidir quais as
+                        ações que o protagonista terá perante as situações inesperadas que irão acontecer, como por
+                        exemplo, aceitar ou não o pedido do homem misterioso. Mas lembre-se, cada escolha sua irá mudar
+                        para sempre a vida de Leonardo...</p>
 
                     <button onclick="acessarJogar()">
                         Jogue agora!
@@ -121,14 +141,72 @@
             <img onclick="acessarGitHub()" src="../assets/Imagens-Home/github.png" alt="ícone GitHub">
         </div>
     </div>
-    
+
 </body>
+
 </html>
 
 <script>
 
+    var idUsuario = sessionStorage.getItem('idUsuario');
+    var nomeUsuario = sessionStorage.getItem('nomeUsuario');
+
+    window.addEventListener('load', () => {
+        if (idUsuario) {
+            navbar.innerHTML = `
+            <h1>
+                <a href="../index.html">
+                    StoryTellers
+                </a>
+            </h1>
+            <ul>
+                <li>
+                    <a href="../index.html">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#jogar">
+                        Jogar
+                    </a>
+                </li>
+                <li>|</li>
+                <li>
+                    Olá, ${nomeUsuario}
+                </li>
+                <li>-</li>
+                <li>
+                    <a onclick="encerrarSessao()">
+                        Sair
+                    </a>
+                </li>
+            </ul>
+        `;
+        }
+    })
+
+    function encerrarSessao() {
+        sessionStorage.removeItem('idUsuario');
+        sessionStorage.removeItem('nomeUsuario');
+        window.location.reload();
+    }
+
+    function abrirErroLogin() {
+        background_aviso.style.display = 'flex';
+        body.style.overflow = 'hidden';
+    }
+
+    function fecharErroLogin() {
+        background_aviso.style.display = 'none';
+        body.style.overflow = 'auto';
+    }
+
     function acessarPagJogo1() {
-        window.location.href = "o-viajante.html";
+        if (idUsuario) {
+            window.location.href = "o-viajante.html";
+        } else {
+            abrirErroLogin();
+        }
     }
 
     function acessarDescJogo1() {
