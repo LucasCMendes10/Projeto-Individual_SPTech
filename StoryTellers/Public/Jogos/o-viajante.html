@@ -31,7 +31,7 @@
                         Carregar Jogo
                     </button><br>
     
-                    <button>
+                    <button onclick="acessarEstatisticas()">
                         Estatísticas
                     </button><br>
     
@@ -544,7 +544,7 @@
                         Carregar Jogo
                     </button><br>
     
-                    <button>
+                    <button onclick="acessarEstatisticas()">
                         Estatísticas
                     </button><br>
     
@@ -603,6 +603,10 @@
         `
     }
 
+    function acessarEstatisticas() {
+        window.location.href = 'estatistica-viajante.html';
+    }
+
     function voltarMenuCredito() {
         creditos.style.display = 'none';
         menu_jogo.style.display = "block";
@@ -617,7 +621,7 @@
 
     function newGame() {
         tela_atual = telas[0];
-        tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.80) 0%, rgba(174,174,174,0.80) 100%), url(../assets/Imagens-Jogos/background-interior-trem.jpg)';
+        tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background-interior-trem.jpg)';
         tela.innerHTML = telas[0];
         localStorage.removeItem('save');
 
