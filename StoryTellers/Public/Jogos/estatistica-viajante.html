@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style-estatistica-viajante.css">
 </head>
 
-<body>
+<body onload="listarConquistasJogo1()">
 
         <div class="header">
             <img src="../assets/Imagens-Jogos/seta-esquerda.png"
@@ -25,6 +25,8 @@
                 </div>
                 <div class="dados">
                     <p><b>Conquistas:</b></p>
+
+                    <div id="conquista"></div>
                 </div>
             </div>
             <div class="container">
@@ -41,6 +43,25 @@
 
     function voltarJogos() {
         window.location.href = 'o-viajante.html';
+    }
+
+    function listarConquistasJogo1() {
+        fetch("/conquistas/listarConquistasJogo1")
+            .then(function (resposta) {
+                if (resposta.status == 201) {
+                    resposta.json().then(res => {
+                        for (index = 0; index < res.length; index += 1) {
+                            conquista.innerHTML += `
+                            <span>
+                                <img src="${res[index].fotoConquista}">
+                                <p>${res[index].nomeConquista}</p>
+                                <p>${res[index].descricaoConquista}</p>
+                            </span>
+                            `;
+                        }
+                    })
+                }
+            })
     }
 
 </script>
