@@ -52,7 +52,7 @@ constraint fkusuariouserjogo foreign key (fkUsuario) references usuario(idUsuari
 fkJogo int,
 constraint fkjogouserjogo foreign key (fkJogo) references jogo(idJogo),
 primary key (id, fkUsuario, fkJogo),
-save varchar(20),
+save int,
 fkAvaliacao int,
 constraint fkavaliacaouserjogo foreign key (fkAvaliacao) references avaliacao(idAvaliacao),
 fkConquista int,
@@ -60,4 +60,14 @@ constraint fkconquistauser foreign key (fkConquista) references conquista(idConq
 dtProgresso TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
+insert into userJogo (fkUsuario, fkJogo, save, fkConquista) values
+    (1, 1, null, null),
+    (2, 1, 'telas[5]', null);
+
+select * from userJogo;
+update userJogo set save = 'tela[5]' where fkUsuario = 5 and fkJogo = 1 and id = 2;
+select save from userJogo where fkUsuario = 5 and fkJogo = 1 order by dtProgresso desc limit 1;
+select count(distinct fkConquista) from userJogo where fkUsuario = 1 and fkJogo = 1 and fkConquista is not null;
+
+truncate table userJogo;
 drop table userJogo;

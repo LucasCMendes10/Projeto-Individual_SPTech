@@ -1,28 +1,28 @@
 var database = require("../database/config");
 
-function listarNomeUsuario() {
+function registrarProgressoInicial(fkUsuario, fkJogo) {    
     var instrucao = `
-        SELECT nomeUsuario from usuario;
+        INSERT INTO userJogo (fkUsuario, fkJogo) VALUES (${fkUsuario}, ${fkJogo});
     `;
     return database.executar(instrucao);
 }
 
-function autenticar(nomeUsuario, senha) {
+function registrarSave(save, fkUsuario, fkJogo, id) {
     var instrucao = `
-        SELECT idUsuario, nomeCompleto, dtNasc, nomeUsuario, senha FROM usuario WHERE nomeUsuario = '${nomeUsuario}' AND senha = '${senha}';
+        update userJogo set save = '${save}' where fkUsuario = ${fkUsuario} and fkJogo = ${fkJogo} and id = ${id};
     `;
     return database.executar(instrucao);
 }
 
-function registrarProgresso(fkUsuario, fkJogo, save) {    
+function carregarSave(fkUsuario, fkJogo) {
     var instrucao = `
-        INSERT INTO userJogo (fkUsuario, fkJogo, save, fkAvaliacao, fkConquista) VALUES (${fkUsuario}, ${fkJogo}, '${save}', null, null);
+        select save from userJogo where fkUsuario = ${fkUsuario} and fkJogo = ${fkJogo} order by dtProgresso desc limit 1;
     `;
     return database.executar(instrucao);
 }
 
 module.exports = {
-    autenticar,
-    registrarProgresso,
-    listarNomeUsuario
+    registrarProgressoInicial,
+    registrarSave,
+    carregarSave
 };

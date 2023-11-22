@@ -203,6 +203,7 @@
 
     function acessarPagJogo1() {
         if (idUsuario) {
+            sessionStorage.setItem("idJogo", 1);
             window.location.href = "o-viajante.html";
         } else {
             abrirErroLogin();

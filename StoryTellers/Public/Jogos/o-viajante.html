@@ -16,25 +16,25 @@
                     alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
                     onclick="voltarJogos()">
             </div>
-    
+
             <div class="menu">
                 <div class="titulo">
                     <h1>O Viajante</h1>
                 </div>
-    
+
                 <div class="botoes-jogo">
                     <button onclick="abrirCaixaConfirmacao()">
                         Novo Jogo
                     </button><br>
-    
+
                     <button onclick="loadGame()">
                         Carregar Jogo
                     </button><br>
-    
+
                     <button onclick="acessarEstatisticas()">
                         Estatísticas
                     </button><br>
-    
+
                     <button onclick="mostrarCreditos()">
                         Créditos
                     </button><br>
@@ -72,18 +72,18 @@
                 </h1>
 
                 <p>
-                    <div class="parte-credito">
-                        <b>Desenvolvido por</b> Lucas Carvalho Mendes
-                    </div>
-                    <div class="parte-credito">
-                        <b>Escrito por </b> Lucas Carvalho Mendes
-                    </div>
-                    <div class="parte-credito">
-                        <b>Feito em</b> JavaScript, HTML e css
-                    </div>
-                    <div class="parte-credito">
-                        <b>Agradecimento </b> Leonardo Santos
-                    </div>
+                <div class="parte-credito">
+                    <b>Desenvolvido por</b> Lucas Carvalho Mendes
+                </div>
+                <div class="parte-credito">
+                    <b>Escrito por </b> Lucas Carvalho Mendes
+                </div>
+                <div class="parte-credito">
+                    <b>Feito em</b> JavaScript, HTML e css
+                </div>
+                <div class="parte-credito">
+                    <b>Agradecimento </b> Leonardo Santos
+                </div>
                 </p>
             </div>
         </div>
@@ -509,13 +509,14 @@
         </div>
         `
 
-    var telas = [tela1, tela2, tela3, tela4, tela5, tela6, tela7, tela8, tela9, tela10, tela11, tela12, tela13, tela14, tela15, tela16, tela17, tela18]
+    var telas = [tela1, tela2, tela3, tela4, tela5, tela6, tela7, tela8, tela9, tela10, tela11, tela12, tela13, tela14, tela15, tela16, tela17, tela18];
 
-    var tela_atual = telas[0];
-
-    var numero_tentativas = 0;
+    var tela_atual = 0;
 
     function voltarJogos() {
+        sessionStorage.removeItem("idJogo");
+        sessionStorage.removeItem("save");
+        sessionStorage.removeItem("id");
         window.location.href = "jogos.html#jogar";
     }
 
@@ -610,7 +611,7 @@
     function voltarMenuCredito() {
         creditos.style.display = 'none';
         menu_jogo.style.display = "block";
-        tela.style.backgroundImage = 'linear-gradient(90deg, rgba(0,0,0,0.5) 22%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.5) 82%), url(../assets/Imagens-Jogos/background-menu-Viajante.jpg)'; 
+        tela.style.backgroundImage = 'linear-gradient(90deg, rgba(0,0,0,0.5) 22%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.5) 82%), url(../assets/Imagens-Jogos/background-menu-Viajante.jpg)';
     }
 
     function mostrarCreditos() {
@@ -620,12 +621,25 @@
     }
 
     function newGame() {
-        tela_atual = telas[0];
+        tela_atual = 0;
         tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background-interior-trem.jpg)';
         tela.innerHTML = telas[0];
-        localStorage.removeItem('save');
 
-        numero_tentativas += 1;
+        fetch("/userJogos/registrarProgressoInicial", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                fkUsuarioServer: sessionStorage.getItem("idUsuario"),
+                fkJogoServer: sessionStorage.getItem("idJogo"),
+            }),
+        })
+            .then(function (resposta) {
+                resposta.json().then(resposta => {
+                    sessionStorage.setItem('id', resposta);
+                })
+            })
     }
 
     function abrirCaixaConfirmacao() {
@@ -641,130 +655,158 @@
     function verificarCaminho(botao) {
         var escolha = Number(botao.value);
 
-        if (tela_atual == telas[0] && escolha == 1) {
+        if (tela_atual == 0 && escolha == 1) {
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background-interior-trem.jpg)';
             tela.innerHTML = telas[1];
-            tela_atual = telas[1];
+            tela_atual = 1;
         }
 
         // Final Mundano
-        else if (tela_atual == telas[1] && escolha == 1) {
+        else if (tela_atual == 1 && escolha == 1) {
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background-interior-trem.jpg)';
             tela.innerHTML = telas[17];
-            tela_atual = telas[17];
+            tela_atual = 17;
         }
 
-        else if (tela_atual == telas[0] && escolha == 2) {
+        else if (tela_atual == 0 && escolha == 2) {
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background-interior-trem.jpg)';
             tela.innerHTML = telas[2];
-            tela_atual = telas[2];
+            tela_atual = 2;
         }
 
-        else if (tela_atual == telas[2] && escolha == 1) {
+        else if (tela_atual == 2 && escolha == 1) {
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background-viela-entre-predios.jpg)';
             tela.innerHTML = telas[3];
-            tela_atual = telas[3];
+            tela_atual = 3;
         }
 
-        else if (tela_atual == telas[3] && escolha == 1) {
+        else if (tela_atual == 3 && escolha == 1) {
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background-viela-entre-predios.jpg)';
             tela.innerHTML = telas[4];
-            tela_atual = telas[4];
+            tela_atual = 4;
         }
 
-        else if (tela_atual == telas[4] && escolha == 1) {
+        else if (tela_atual == 4 && escolha == 1) {
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background-viela-entre-predios.jpg)';
             tela.innerHTML = telas[5];
-            tela_atual = telas[5];
+            tela_atual = 5;
         }
 
-        else if (tela_atual == telas[5] && escolha == 1) {
+        else if (tela_atual == 5 && escolha == 1) {
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background-viela-entre-predios.jpg)';
             tela.innerHTML = telas[6];
-            tela_atual = telas[6];
+            tela_atual = 6;
         }
 
-        else if (tela_atual == telas[6] && escolha == 1) {
+        else if (tela_atual == 6 && escolha == 1) {
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background-viela-entre-predios.jpg)';
             tela.innerHTML = telas[7];
-            tela_atual = telas[7];
+            tela_atual = 7;
         }
 
         // Final Confinado
-        else if (tela_atual == telas[7] && escolha == 1) {
+        else if (tela_atual == 7 && escolha == 1) {
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background-viela-entre-predios.jpg)';
             tela.innerHTML = telas[16];
-            tela_atual = telas[16];
+            tela_atual = 16;
         }
 
-        else if (tela_atual == telas[3] && escolha == 2) {
+        else if (tela_atual == 3 && escolha == 2) {
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background-viela-entre-predios.jpg)';
             tela.innerHTML = telas[8];
-            tela_atual = telas[8];
+            tela_atual = 8;
         }
 
-        else if (tela_atual == telas[8] && escolha == 1) {
+        else if (tela_atual == 8 && escolha == 1) {
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background_terreno_abandonado.jpg)';
             tela.innerHTML = telas[9];
-            tela_atual = telas[9];
+            tela_atual = 9;
         }
 
-        else if (tela_atual == telas[9] && escolha == 1) {
+        else if (tela_atual == 9 && escolha == 1) {
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background_terreno_abandonado.jpg)';
             tela.innerHTML = telas[10];
-            tela_atual = telas[10];
+            tela_atual = 10;
         }
 
-        else if (tela_atual == telas[10] && escolha == 1) {
+        else if (tela_atual == 10 && escolha == 1) {
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background_terreno_abandonado.jpg)';
             tela.innerHTML = telas[11];
-            tela_atual = telas[11];
+            tela_atual = 11;
         }
 
-        else if (tela_atual == telas[11] && escolha == 1) {
+        else if (tela_atual == 11 && escolha == 1) {
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background_terreno_abandonado.jpg)';
             tela.innerHTML = telas[12];
-            tela_atual = telas[12];
+            tela_atual = 12;
         }
 
-        else if (tela_atual == telas[12] && escolha == 1) {
+        else if (tela_atual == 12 && escolha == 1) {
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background_terreno_abandonado.jpg)';
             tela.innerHTML = telas[13];
-            tela_atual = telas[13];
+            tela_atual = 13;
         }
 
         // Final Épico - 1
-        else if (tela_atual == telas[13] && escolha == 1) {
+        else if (tela_atual == 13 && escolha == 1) {
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background_terreno_abandonado.jpg)';
             tela.innerHTML = telas[15];
-            tela_atual = telas[15];
+            tela_atual = 15;
         }
 
-        else if (tela_atual == telas[12] && escolha == 2) {
+        else if (tela_atual == 12 && escolha == 2) {
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background_terreno_abandonado.jpg)';
             tela.innerHTML = telas[14];
-            tela_atual = telas[14];
+            tela_atual = 14;
         }
 
         // Final Épico - 2
-        else if (tela_atual == telas[14] && escolha == 1) {
+        else if (tela_atual == 14 && escolha == 1) {
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background_terreno_abandonado.jpg)';
             tela.innerHTML = telas[15];
-            tela_atual = telas[15];
+            tela_atual = 15;
         }
 
-        localStorage.setItem('save', tela_atual);
+        sessionStorage.setItem("save", tela_atual);
+
+        fetch("/userJogos/registrarSave", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                fkUsuarioServer: sessionStorage.getItem("idUsuario"),
+                fkJogoServer: sessionStorage.getItem("idJogo"),
+                idServer: sessionStorage.getItem("id"),
+                saveServer: sessionStorage.getItem("save")
+            }),
+        })
     }
 
-    function loadGame() {
-        var load = localStorage.getItem('save');
+    var carregar_jogo = '';
 
-        if (!load) {
-            alert("Você não possui nenhum progresso salvo");
-        } else {
-            tela.innerHTML = load;
-            tela.style.backgroundImage = 'none';
-        }
+    function loadGame() {
+
+        fetch(`/userJogos/carregarSave/${sessionStorage.getItem("idUsuario")}/${sessionStorage.getItem("idJogo")}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+            .then(function (resposta) {
+                resposta.json().then(resposta => {
+                    carregar_jogo = Number(resposta[0].save);
+
+                    if (carregar_jogo == null || carregar_jogo == 0) {
+                        alert("Você não possui nenhum progresso salvo");
+                    } else {
+                        tela.innerHTML = telas[carregar_jogo];
+                        tela.style.backgroundImage = `linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/${banco})`;
+                    }
+                })
+
+            })
+
     }
 
 </script>
