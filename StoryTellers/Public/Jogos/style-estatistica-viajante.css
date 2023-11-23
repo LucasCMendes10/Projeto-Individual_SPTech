@@ -66,10 +66,60 @@ html, body {
 
 .dados:nth-child(2) {
     height: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.dados:nth-child(2) img {
+    width: 54px;
+    height: 54px;
+    border: solid 3px #222;
+    padding: 4px;
 }
 
 .dados:nth-child(2) p {
     font-size: 1.2rem;
+}
+
+.titulo-conquista {
+    align-self: center;
+    margin-top: 10px;
+    margin-bottom: 14px;
+}
+
+#conquista {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 20px;
+}
+
+#conquista .trofeus {
+    border: #f0eeee solid 4px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+#conquista p {
+    font-size: 1.1rem;
+    margin-left: 10px;
+}
+
+#conquista .descricao-trofeu {
+    font-size: 0.88rem;
+}
+
+#conquista #conquista1 {
+    display: none;
+}
+
+#conquista #conquista2 {
+    display: none;
+}
+
+#conquista #conquista3 {
+    display: none;
 }
 
 .graficos {

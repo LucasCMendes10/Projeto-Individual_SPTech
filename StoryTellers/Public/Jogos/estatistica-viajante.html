@@ -8,32 +8,36 @@
     <link rel="stylesheet" href="style-estatistica-viajante.css">
 </head>
 
-<body onload="listarConquistasJogo1()">
+<body onload="listagemProgressoJogo1()">
 
-        <div class="header">
-            <img src="../assets/Imagens-Jogos/seta-esquerda.png"
-                alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
-                onclick="voltarJogos()">
-        </div>
+    <div class="header">
+        <img src="../assets/Imagens-Jogos/seta-esquerda.png"
+            alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
+            onclick="voltarJogos()">
+    </div>
 
-        <div class="estatisticas">
-            <div class="container">
-                <div class="dados">
-                    <p><b>Finais Conquistados: </b>0/3</p>
+    <div class="estatisticas">
+        <div class="container">
+            <div class="dados">
+                <div id="contagem_conquistas">
 
-                    <p><b>Número de Tentativas: </b>0</p>
                 </div>
-                <div class="dados">
-                    <p><b>Conquistas:</b></p>
 
-                    <div id="conquista"></div>
+                <div id="contagem_tentativas">
+
                 </div>
             </div>
-            <div class="container">
-                <div class="graficos"></div>
-                <div class="graficos"></div>
+            <div class="dados">
+                <p class="titulo-conquista"><b>Conquistas:</b></p>
+
+                <div id="conquista"></div>
             </div>
         </div>
+        <div class="container">
+            <div class="graficos"></div>
+            <div class="graficos"></div>
+        </div>
+    </div>
 
 </body>
 
@@ -45,23 +49,85 @@
         window.location.href = 'o-viajante.html';
     }
 
-    function listarConquistasJogo1() {
+    var contagemconquistas = 0;
+    var contagemTentativas = 0;
+
+    function listagemProgressoJogo1() {
+
+        fetch(`/userJogos/contagemConquistas/${sessionStorage.getItem("idUsuario")}/${sessionStorage.getItem("idJogo")}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+            .then(function (resposta) {
+                resposta.json().then(resposta => {
+                    contagemConquistas = Number(resposta[0].numConquistas);
+
+                    contagem_conquistas.innerHTML = `<p><b>Finais Conquistados: </b>${contagemConquistas}/3</p>`;
+                })
+            })
+
+        fetch(`/userJogos/contagemTentativas/${sessionStorage.getItem("idUsuario")}/${sessionStorage.getItem("idJogo")}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+            .then(function (resposta) {
+                resposta.json().then(resposta => {
+                    contagemTentativas = Number(resposta[0].Tentativas);
+
+                    contagem_tentativas.innerHTML = `<p><b>Número de Tentativas: </b>${contagemTentativas}</p>`;
+                })
+            })
+
         fetch("/conquistas/listarConquistasJogo1")
             .then(function (resposta) {
                 if (resposta.status == 201) {
                     resposta.json().then(res => {
                         for (index = 0; index < res.length; index += 1) {
                             conquista.innerHTML += `
-                            <span>
+                            <div class="trofeus" id="conquista${index + 1}">
+                            <div>
                                 <img src="${res[index].fotoConquista}">
-                                <p>${res[index].nomeConquista}</p>
-                                <p>${res[index].descricaoConquista}</p>
-                            </span>
+                            </div>
+                            <div>
+                                <p><b>${res[index].nomeConquista}</b></p>
+                                <p class="descricao-trofeu">${res[index].descricaoConquista}</p>
+                            </div>
+                            </div>
                             `;
                         }
                     })
                 }
             })
+
+        setTimeout(() => {
+            for (var index = 1; index <= 3; index += 1) {
+                fetch(`/userJogos/verificarConquistas/${sessionStorage.getItem("idUsuario")}/${sessionStorage.getItem("idJogo")}/${index}`, {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json",
+                    }
+                })
+                    .then(function (resposta) {
+                        resposta.json().then(resposta => {
+                            if (resposta[0].fkConquista == 1) {
+                                conquista1.style.display = "flex";
+                            }
+
+                            if (resposta[0].fkConquista == 2) {
+                                conquista2.style.display = "flex";
+                            }
+
+                            if (resposta[0].fkConquista == 3) {
+                                conquista3.style.display = "flex";
+                            }
+                        })
+                    })
+            }
+        }, 100)
     }
 
 </script>

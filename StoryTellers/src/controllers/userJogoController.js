@@ -53,8 +53,83 @@ function carregarSave(req, res) {
         );
 }
 
+function contagemTentativas(req, res) {
+    var fkUsuario = req.params.fkUsuario;
+    var fkJogo = req.params.fkJogo;
+
+    userJogoModel.contagemTentativas(fkUsuario, fkJogo)
+        .then(
+            function (resultado) {
+                res.status(201).json(resultado);
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                res.status(500).send("Erro ao gerar progresso!");
+            }
+        );
+}
+
+function registrarConquistas(req, res) {
+    var fkConquista = req.body.fkConquistaServer;
+    var fkUsuario = req.body.fkUsuarioServer;
+    var fkJogo = req.body.fkJogoServer;
+    var id = req.body.idServer;
+
+    userJogoModel.registrarConquistas(fkConquista, fkUsuario, fkJogo, id)
+        .then(
+            function (resultado) {
+                res.status(201).json(resultado);
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                res.status(500).send("Erro ao gerar progresso!");
+            }
+        );
+}
+
+function contagemConquistas(req, res) {
+    var fkUsuario = req.params.fkUsuario;
+    var fkJogo = req.params.fkJogo;
+
+    userJogoModel.contagemConquistas(fkUsuario, fkJogo)
+        .then(
+            function (resultado) {
+                res.status(201).json(resultado);
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                res.status(500).send("Erro ao gerar progresso!");
+            }
+        );
+}
+
+function verificarConquistas(req, res) {
+    var fkUsuario = req.params.fkUsuario;
+    var fkJogo = req.params.fkJogo;
+    var fkConquista = req.params.fkConquista;
+
+    userJogoModel.verificarConquistas(fkUsuario, fkJogo, fkConquista)
+        .then(
+            function (resultado) {
+                res.status(201).json(resultado);
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                res.status(500).send("Erro ao gerar progresso!");
+            }
+        );
+}
+
 module.exports = {
     registrarProgressoInicial,
     registrarSave,
-    carregarSave
+    carregarSave,
+    contagemTentativas,
+    registrarConquistas,
+    contagemConquistas,
+    verificarConquistas
 }

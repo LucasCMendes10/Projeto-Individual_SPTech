@@ -15,4 +15,20 @@ router.get("/carregarSave/:fkUsuario/:fkJogo", function (req, res) {
     userJogoController.carregarSave(req, res);
 })
 
+router.get("/contagemTentativas/:fkUsuario/:fkJogo", function (req, res) {
+    userJogoController.contagemTentativas(req, res);
+})
+
+router.put("/registrarConquistas", function (req, res) {
+    userJogoController.registrarConquistas(req, res);
+})
+
+router.get("/contagemConquistas/:fkUsuario/:fkJogo", function (req, res) {
+    userJogoController.contagemConquistas(req, res);
+})
+
+router.get("/verificarConquistas/:fkUsuario/:fkJogo/:fkConquista", function (req, res) {
+    userJogoController.verificarConquistas(req, res);
+})
+
 module.exports = router;

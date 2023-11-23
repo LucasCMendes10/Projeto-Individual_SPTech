@@ -666,6 +666,19 @@
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background-interior-trem.jpg)';
             tela.innerHTML = telas[17];
             tela_atual = 17;
+
+            fetch("/userJogos/registrarConquistas", {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    fkConquistaServer: "1",
+                    fkUsuarioServer: sessionStorage.getItem("idUsuario"),
+                    fkJogoServer: sessionStorage.getItem("idJogo"),
+                    idServer: sessionStorage.getItem("id"),
+                }),
+            })
         }
 
         else if (tela_atual == 0 && escolha == 2) {
@@ -709,6 +722,19 @@
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background-viela-entre-predios.jpg)';
             tela.innerHTML = telas[16];
             tela_atual = 16;
+
+            fetch("/userJogos/registrarConquistas", {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    fkConquistaServer: "2",
+                    fkUsuarioServer: sessionStorage.getItem("idUsuario"),
+                    fkJogoServer: sessionStorage.getItem("idJogo"),
+                    idServer: sessionStorage.getItem("id"),
+                }),
+            })
         }
 
         else if (tela_atual == 3 && escolha == 2) {
@@ -752,6 +778,19 @@
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background_terreno_abandonado.jpg)';
             tela.innerHTML = telas[15];
             tela_atual = 15;
+
+            fetch("/userJogos/registrarConquistas", {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    fkConquistaServer: "3",
+                    fkUsuarioServer: sessionStorage.getItem("idUsuario"),
+                    fkJogoServer: sessionStorage.getItem("idJogo"),
+                    idServer: sessionStorage.getItem("id"),
+                }),
+            })
         }
 
         else if (tela_atual == 12 && escolha == 2) {
@@ -765,6 +804,19 @@
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background_terreno_abandonado.jpg)';
             tela.innerHTML = telas[15];
             tela_atual = 15;
+
+            fetch("/userJogos/registrarConquistas", {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    fkConquistaServer: "3",
+                    fkUsuarioServer: sessionStorage.getItem("idUsuario"),
+                    fkJogoServer: sessionStorage.getItem("idJogo"),
+                    idServer: sessionStorage.getItem("id"),
+                }),
+            })
         }
 
         sessionStorage.setItem("save", tela_atual);
@@ -795,13 +847,17 @@
         })
             .then(function (resposta) {
                 resposta.json().then(resposta => {
-                    carregar_jogo = Number(resposta[0].save);
-
-                    if (carregar_jogo == null || carregar_jogo == 0) {
+                    if (resposta.length == 0) {
                         alert("Você não possui nenhum progresso salvo");
                     } else {
-                        tela.innerHTML = telas[carregar_jogo];
-                        tela.style.backgroundImage = `linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/${banco})`;
+                        carregar_jogo = Number(resposta[0].save);
+
+                        if (carregar_jogo == null || carregar_jogo == 0) {
+                            alert("Você não possui nenhum progresso salvo");
+                        } else {
+                            tela.innerHTML = telas[carregar_jogo];
+                            tela.style.backgroundImage = `linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/${banco})`;
+                        }
                     }
                 })
 
