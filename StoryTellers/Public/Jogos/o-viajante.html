@@ -214,9 +214,9 @@
 
         <div class ="tela-jogo">
         <p>
-            Por um momento, os dois ficaram em silêncio, Leonardo estava absorvendo todas as informações e Roger estava preocupado em seguir logo seus planos, com isso, o silêncio é interrompido quando o líder dos Renegados decide dizer:<br>
+            Por um momento, os dois ficaram em silêncio, Leonardo estava absorvendo todas as informações e Roger estava preocupado em seguir logo seus planos, com isso, o silêncio é interrompido quando Roger, o líder dos Renegados, decide dizer:<br>
             
-            Roger: Leonardo, repitindo, você é muito importante para todo o futuro da humindade, se quer saber mais sobre seu destino, qual o seu papel nisso tudo, quem compõe o meu bando e entrar na maior jornada de toda a sua vida, entre comigo aqui no armazém ou se não... posso te levar de volta ao seu tempo. A escolha é sua!<br>
+            - Leonardo, repetindo, você é muito importante para todo o futuro da humanidade, se quer saber mais sobre seu destino, qual o seu papel nisso tudo, quem compõe o meu bando e entrar na maior jornada de toda a sua vida, entre comigo aqui no armazém ou se não... posso te levar de volta ao seu tempo. A escolha é sua!<br>
             
         Diante tamanha decisão, Leonardo fica bem intrigado com tudo, mas não tem como saber aonde isso iria o levar, porém claramente seria muito perigoso, então ele decide...
         </p><br>
@@ -241,7 +241,7 @@
 
         <div class ="tela-jogo">
         <p>
-            Homem MIsterioso: Primeiro de tudo, você está no futuro, mais precisamente no ano de 2097, te chamei aqui porque sua presença nesse momento da história é fundamental para o futuro de toda a humanidade. Eu me chamo Roger, sou um renegado da sociedade. Peço perdão pelo local que estamos agora, sei que não é muito confortável, mas é aqui que eu e meu bando vive.<br>
+            Homem Misterioso: Primeiro de tudo, você está no futuro, mais precisamente no ano de 2097, te chamei aqui porque sua presença nesse momento da história é fundamental para o futuro de toda a humanidade. Eu me chamo Roger, sou um renegado da sociedade. Peço perdão pelo local que estamos agora, sei que não é muito confortável, mas é aqui que eu e meu bando vive.<br>
             
         Leonardo: Seu bando? Quer dizer então que tem mais pessoas vivendo aqui?<br>
 
@@ -345,7 +345,7 @@
             
             Leonardo: Não, esperem! Nã--<br>
             
-            Leo recebe um soco na boca por ter desobedecido a ordem e então segue. sem escolha, para sua prisão. Sendo que o homem misterioso fica ali, livre, assistindo Leo sendo levado. Acontece, que Leonardo não conseguiu ver qual era a expressão no rosto do homem.</p><br>
+            Leo recebe um soco na boca por ter desobedecido a ordem e então segue, sem escolha, para sua prisão. Sendo que o homem misterioso fica ali, livre, assistindo Leo ser levado. Acontece, que Leonardo não conseguiu ver qual era a expressão no rosto do homem.</p><br>
             
         <button id="caminho1" value="1" onclick="verificarCaminho(this)">
             Continuar
@@ -361,17 +361,17 @@
         </div>
 
         <div class ="tela-jogo">
-            <p>Após os drones, chega um tipo de helipótero sem hélice apontando uma forte luz no rosto de Leo e do misterioso homem, desse mesmo veículo, um homem (de capacete, com um emblema peculiar) abre uma porta e usando um megafone, ele anuncia:<br>
+            <p>Após os drones, chega um tipo de helicóptero sem hélice apontando uma forte luz no rosto de Leo e do misterioso homem; desse mesmo veículo, um homem (de capacete, com um emblema peculiar) abre uma porta e usando um megafone, ele anuncia:<br>
                 
                 - Aqui é a Força Policial do Governo Mundial! Vocês dois estão presos por uso indevido da ciência quântica! Coloquem suas mãos para cima e aguardem serem algemados! Se fizerem algo além disso, tenho autorização para atirar para matar!<br>
                 
-        Os dois, sem muita escolha, erguem suas mãos e aguardam a chegada dos policiais, que rapidamente se aproximam deles (após descer do veículo) e os algema. Só que um dos policiais reconhece o homem misterioso e pergunta:<br>
+        Os dois, sem muita escolha, erguem suas mãos e aguardam a chegada dos policiais, que rapidamente se aproximam deles (após descer do veículo) e os algemam. Só que um dos policiais reconhece o homem misterioso e pergunta:<br>
         
         - Você de novo? O que pensa estar fazendo dessa vez?<br>
 
         Homem Misterioso: Eu... trouxe comigo a pessoa que vocês mais queriam ver!<br>
         
-        Leonardo se surpreende com a resposta, já o policial, o encarra de forma munuciosa e diz:<br>
+        Leonardo se surpreende com a resposta, já o policial, o encara de forma minuciosa e diz:<br>
 
         - De fato... está mais jovem do que a imagem que conhecemos, mas é ele mesmo. Bom, hoje é seu dia de sorte.</p><br>
         
@@ -395,7 +395,7 @@
         
         Homem Misterioso: Certo, certo... primeiro de tudo, você está no futuro, mais precisamente em 2097 e eu te chamei aqui porque sua presença nesse instante do tempo é fundamental para o futuro de toda a humanidade. Eu me chamo--<br>
 
-        O homem é interrompido por sirines e sons de drones voadores que chegam no local. O som das sirines remetem imediatamente ao som da polícia e Leo, apesar de assustado, já imagina que aquilo é um mal sinal para ele.</p><br>
+        O homem é interrompido por sirenes e sons de drones voadores que chegam no local. O som das sirenes remetem imediatamente ao som da polícia e Leo, apesar de assustado, já imagina que aquilo é um mal sinal para ele.</p><br>
         
         <button id="caminho1" value="1" onclick="verificarCaminho(this)">
             Continuar
@@ -512,10 +512,12 @@
     var telas = [tela1, tela2, tela3, tela4, tela5, tela6, tela7, tela8, tela9, tela10, tela11, tela12, tela13, tela14, tela15, tela16, tela17, tela18];
 
     var tela_atual = 0;
+    var background_atual = '';
 
     function voltarJogos() {
         sessionStorage.removeItem("idJogo");
         sessionStorage.removeItem("save");
+        sessionStorage.removeItem("saveBackground");
         sessionStorage.removeItem("id");
         window.location.href = "jogos.html#jogar";
     }
@@ -622,6 +624,7 @@
 
     function newGame() {
         tela_atual = 0;
+        background_atual = "background-interior-trem.jpg";
         tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background-interior-trem.jpg)';
         tela.innerHTML = telas[0];
 
@@ -659,6 +662,7 @@
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background-interior-trem.jpg)';
             tela.innerHTML = telas[1];
             tela_atual = 1;
+            background_atual = "background-interior-trem.jpg";
         }
 
         // Final Mundano
@@ -666,6 +670,7 @@
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background-interior-trem.jpg)';
             tela.innerHTML = telas[17];
             tela_atual = 17;
+            background_atual = "background-interior-trem.jpg";
 
             fetch("/userJogos/registrarConquistas", {
                 method: "PUT",
@@ -685,36 +690,42 @@
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background-interior-trem.jpg)';
             tela.innerHTML = telas[2];
             tela_atual = 2;
+            background_atual = "background-interior-trem.jpg";
         }
 
         else if (tela_atual == 2 && escolha == 1) {
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background-viela-entre-predios.jpg)';
             tela.innerHTML = telas[3];
             tela_atual = 3;
+            background_atual = "background-viela-entre-predios.jpg";
         }
 
         else if (tela_atual == 3 && escolha == 1) {
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background-viela-entre-predios.jpg)';
             tela.innerHTML = telas[4];
             tela_atual = 4;
+            background_atual = "background-viela-entre-predios.jpg";
         }
 
         else if (tela_atual == 4 && escolha == 1) {
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background-viela-entre-predios.jpg)';
             tela.innerHTML = telas[5];
             tela_atual = 5;
+            background_atual = "background-viela-entre-predios.jpg";
         }
 
         else if (tela_atual == 5 && escolha == 1) {
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background-viela-entre-predios.jpg)';
             tela.innerHTML = telas[6];
             tela_atual = 6;
+            background_atual = "background-viela-entre-predios.jpg";
         }
 
         else if (tela_atual == 6 && escolha == 1) {
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background-viela-entre-predios.jpg)';
             tela.innerHTML = telas[7];
             tela_atual = 7;
+            background_atual = "background-viela-entre-predios.jpg";
         }
 
         // Final Confinado
@@ -722,6 +733,7 @@
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background-viela-entre-predios.jpg)';
             tela.innerHTML = telas[16];
             tela_atual = 16;
+            background_atual = "background-viela-entre-predios.jpg";
 
             fetch("/userJogos/registrarConquistas", {
                 method: "PUT",
@@ -741,36 +753,42 @@
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background-viela-entre-predios.jpg)';
             tela.innerHTML = telas[8];
             tela_atual = 8;
+            background_atual = "background-viela-entre-predios.jpg";
         }
 
         else if (tela_atual == 8 && escolha == 1) {
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background_terreno_abandonado.jpg)';
             tela.innerHTML = telas[9];
             tela_atual = 9;
+            background_atual = "background_terreno_abandonado.jpg";
         }
 
         else if (tela_atual == 9 && escolha == 1) {
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background_terreno_abandonado.jpg)';
             tela.innerHTML = telas[10];
             tela_atual = 10;
+            background_atual = "background_terreno_abandonado.jpg";
         }
 
         else if (tela_atual == 10 && escolha == 1) {
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background_terreno_abandonado.jpg)';
             tela.innerHTML = telas[11];
             tela_atual = 11;
+            background_atual = "background_terreno_abandonado.jpg";
         }
 
         else if (tela_atual == 11 && escolha == 1) {
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background_terreno_abandonado.jpg)';
             tela.innerHTML = telas[12];
             tela_atual = 12;
+            background_atual = "background_terreno_abandonado.jpg";
         }
 
         else if (tela_atual == 12 && escolha == 1) {
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background_terreno_abandonado.jpg)';
             tela.innerHTML = telas[13];
             tela_atual = 13;
+            background_atual = "background_terreno_abandonado.jpg";
         }
 
         // Final Épico - 1
@@ -778,6 +796,7 @@
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background_terreno_abandonado.jpg)';
             tela.innerHTML = telas[15];
             tela_atual = 15;
+            background_atual = "background_terreno_abandonado.jpg";
 
             fetch("/userJogos/registrarConquistas", {
                 method: "PUT",
@@ -797,6 +816,7 @@
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background_terreno_abandonado.jpg)';
             tela.innerHTML = telas[14];
             tela_atual = 14;
+            background_atual = "background_terreno_abandonado.jpg";
         }
 
         // Final Épico - 2
@@ -804,6 +824,7 @@
             tela.style.backgroundImage = 'linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/background_terreno_abandonado.jpg)';
             tela.innerHTML = telas[15];
             tela_atual = 15;
+            background_atual = "background_terreno_abandonado.jpg";
 
             fetch("/userJogos/registrarConquistas", {
                 method: "PUT",
@@ -820,6 +841,7 @@
         }
 
         sessionStorage.setItem("save", tela_atual);
+        sessionStorage.setItem("saveBackground", background_atual);
 
         fetch("/userJogos/registrarSave", {
             method: "PUT",
@@ -833,9 +855,23 @@
                 saveServer: sessionStorage.getItem("save")
             }),
         })
+
+        fetch("/userJogos/registrarSaveBackground", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                fkUsuarioServer: sessionStorage.getItem("idUsuario"),
+                fkJogoServer: sessionStorage.getItem("idJogo"),
+                idServer: sessionStorage.getItem("id"),
+                saveBackgroundServer: sessionStorage.getItem("saveBackground")
+            }),
+        })
     }
 
     var carregar_jogo = '';
+    var carregar_background = "";
 
     function loadGame() {
 
@@ -856,7 +892,54 @@
                             alert("Você não possui nenhum progresso salvo");
                         } else {
                             tela.innerHTML = telas[carregar_jogo];
-                            tela.style.backgroundImage = `linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/${banco})`;
+                            tela_atual = carregar_jogo;
+                        }
+                    }
+                })
+
+            })
+
+        fetch(`/userJogos/carregarSaveBackground/${sessionStorage.getItem("idUsuario")}/${sessionStorage.getItem("idJogo")}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+            .then(function (resposta) {
+                resposta.json().then(resposta => {
+                    if (resposta.length == 0) {
+                        alert("Você não possui nenhum progresso salvo");
+                    } else {
+                        carregar_background = resposta[0].saveBackground;
+
+                        if (carregar_background == null || carregar_background == '') {
+                            alert("Você não possui nenhum progresso salvo");
+                        } else {
+                            tela.style.backgroundImage = `linear-gradient(90deg, rgba(174,174,174,0.65) 0%, rgba(174,174,174,0.65) 100%), url(../assets/Imagens-Jogos/${carregar_background})`;
+                            background_atual = carregar_background;
+                        }
+                    }
+                })
+
+            })
+
+        fetch(`/userJogos/carregarTentativa/${sessionStorage.getItem("idUsuario")}/${sessionStorage.getItem("idJogo")}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+            .then(function (resposta) {
+                resposta.json().then(resposta => {
+                    if (resposta.length == 0) {
+                        alert("Você não possui nenhum progresso salvo");
+                    } else {
+                        num_tentativa = Number(resposta[0].id);
+
+                        if (num_tentativa == null) {
+                            alert("Você não possui nenhum progresso salvo");
+                        } else {
+                            sessionStorage.setItem('id', num_tentativa);
                         }
                     }
                 })

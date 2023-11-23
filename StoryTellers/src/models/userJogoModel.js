@@ -14,9 +14,30 @@ function registrarSave(save, fkUsuario, fkJogo, id) {
     return database.executar(instrucao);
 }
 
+function registrarSaveBackground(saveBackground, fkUsuario, fkJogo, id) {
+    var instrucao = `
+        update userJogo set saveBackground = '${saveBackground}' where fkUsuario = ${fkUsuario} and fkJogo = ${fkJogo} and id = ${id};
+    `;
+    return database.executar(instrucao);
+}
+
 function carregarSave(fkUsuario, fkJogo) {
     var instrucao = `
         select save from userJogo where fkUsuario = ${fkUsuario} and fkJogo = ${fkJogo} order by dtProgresso desc limit 1;
+    `;
+    return database.executar(instrucao);
+}
+
+function carregarSaveBackground(fkUsuario, fkJogo) {
+    var instrucao = `
+        select saveBackground from userJogo where fkUsuario = ${fkUsuario} and fkJogo = ${fkJogo} order by dtProgresso desc limit 1;
+    `;
+    return database.executar(instrucao);
+}
+
+function carregarTentativa(fkUsuario, fkJogo) {
+    var instrucao = `
+        select id from userJogo where fkUsuario = ${fkUsuario} and fkJogo = ${fkJogo} order by dtProgresso desc limit 1;
     `;
     return database.executar(instrucao);
 }
@@ -52,7 +73,10 @@ function verificarConquistas(fkUsuario, fkJogo, fkConquista) {
 module.exports = {
     registrarProgressoInicial,
     registrarSave,
+    registrarSaveBackground,
     carregarSave,
+    carregarSaveBackground,
+    carregarTentativa,
     contagemTentativas,
     registrarConquistas,
     contagemConquistas,

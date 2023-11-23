@@ -11,8 +11,20 @@ router.put("/registrarSave", function (req, res) {
     userJogoController.registrarSave(req, res);
 })
 
+router.put("/registrarSaveBackground", function (req, res) {
+    userJogoController.registrarSaveBackground(req, res);
+})
+
 router.get("/carregarSave/:fkUsuario/:fkJogo", function (req, res) {
     userJogoController.carregarSave(req, res);
+})
+
+router.get("/carregarSaveBackground/:fkUsuario/:fkJogo", function (req, res) {
+    userJogoController.carregarSaveBackground(req, res);
+})
+
+router.get("/carregarTentativa/:fkUsuario/:fkJogo", function (req, res) {
+    userJogoController.carregarTentativa(req, res);
 })
 
 router.get("/contagemTentativas/:fkUsuario/:fkJogo", function (req, res) {

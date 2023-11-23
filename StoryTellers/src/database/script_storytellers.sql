@@ -53,6 +53,7 @@ fkJogo int,
 constraint fkjogouserjogo foreign key (fkJogo) references jogo(idJogo),
 primary key (id, fkUsuario, fkJogo),
 save int,
+saveBackground varchar(50),	
 fkAvaliacao int,
 constraint fkavaliacaouserjogo foreign key (fkAvaliacao) references avaliacao(idAvaliacao),
 fkConquista int,
@@ -60,10 +61,14 @@ constraint fkconquistauser foreign key (fkConquista) references conquista(idConq
 dtProgresso TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
-truncate table userJogo;
-
+select * from usuario;
 select * from userJogo;
-select save from userJogo where fkUsuario = 5 and fkJogo = 1 order by dtProgresso desc limit 1;
+truncate table userJogo;
+select save from userJogo where fkUsuario = 2 and fkJogo = 1 order by dtProgresso desc limit 1;
 select count(fkUsuario) from userJogo where fkUsuario = 5 and fkJogo = 1;
 select count(distinct fkConquista) from userJogo where fkUsuario = 5 and fkJogo = 1 and fkConquista is not null;
 select * from userJogo where fkUsuario = 5 and fkJogo = 1 and fkConquista = 1;
+update userJogo set save = 10 where fkUsuario = 1 and fkJogo = 1 and id = 10;
+update userJogo set saveBackground = 'teste5' where fkUsuario = 1 and fkJogo = 1 and id = 10;
+
+select id from userJogo where fkUsuario = 2 and fkJogo = 1 order by dtProgresso desc limit 1;
