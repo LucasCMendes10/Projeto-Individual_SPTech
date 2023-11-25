@@ -44,6 +44,7 @@ html, body {
     border: none;
     padding: 8px 14px;
     border-radius: 8px;
+    width: 200px;
 }
 
 .container button {

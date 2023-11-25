@@ -70,6 +70,17 @@ function verificarConquistas(fkUsuario, fkJogo, fkConquista) {
     return database.executar(instrucao);
 }
 
+function exibirFinaisJogo1() {
+    var instrucao = `
+        select count(fkConquista) as qtdConquista1,
+              (select count(fkConquista) from userJogo where fkConquista = 2 and fkJogo = 1) as qtdConquista2,
+              (select count(fkConquista) from userJogo where fkConquista = 3 and fkJogo = 1) as qtdConquista3
+        from userJogo
+        where fkConquista = 1 and fkJogo = 1;
+    `;
+    return database.executar(instrucao);
+}
+
 module.exports = {
     registrarProgressoInicial,
     registrarSave,
@@ -80,5 +91,6 @@ module.exports = {
     contagemTentativas,
     registrarConquistas,
     contagemConquistas,
-    verificarConquistas
+    verificarConquistas,
+    exibirFinaisJogo1
 };

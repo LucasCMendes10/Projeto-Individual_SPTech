@@ -14,7 +14,15 @@ function verificarAvaliacao(fkJogo, fkUsuario) {
     return database.executar(instrucao);
 }
 
+function exibirAvaliacoes() {    
+    var instrucao = `
+        select qtdEstrela, count(qtdEstrela) as qtdAvaliacao from avaliacao group by qtdEstrela order by qtdEstrela;
+    `;
+    return database.executar(instrucao);
+}
+
 module.exports = {
     registrarAvaliacao,
-    verificarAvaliacao
+    verificarAvaliacao,
+    exibirAvaliacoes
 };

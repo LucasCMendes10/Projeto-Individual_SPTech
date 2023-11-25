@@ -124,9 +124,23 @@ html, body {
 
 .graficos {
     background-color: #111155;
-    height: 50%;
+    height: 46.4%;
+    padding: 0px 20px 20px 20px;
+    display: flex;
+    justify-content: center;
 }
 
 .graficos:nth-child(1) {
     border-bottom: 2px solid black;
+}
+
+#easterEgg {
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+}
+
+#easterEgg img {
+    width: 130px;
 }

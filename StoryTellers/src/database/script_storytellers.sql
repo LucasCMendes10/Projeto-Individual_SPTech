@@ -63,8 +63,6 @@ constraint fkjogouserjogo foreign key (fkJogo) references jogo(idJogo),
 primary key (id, fkUsuario, fkJogo),
 save int,
 saveBackground varchar(50),	
-fkAvaliacao int,
-constraint fkavaliacaouserjogo foreign key (fkAvaliacao) references avaliacao(idAvaliacao),
 fkConquista int,
 constraint fkconquistauser foreign key (fkConquista) references conquista(idConquista),
 dtProgresso TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
@@ -82,6 +80,13 @@ select count(distinct fkConquista) from userJogo where fkUsuario = 5 and fkJogo 
 select * from userJogo where fkUsuario = 5 and fkJogo = 1 and fkConquista = 1;
 update userJogo set save = 10 where fkUsuario = 1 and fkJogo = 1 and id = 10;
 update userJogo set saveBackground = 'teste5' where fkUsuario = 1 and fkJogo = 1 and id = 10;
-update userJogo set fkAvaliacao = 1 where fkUsuario = 1 and fkJogo = 1 and id = ();
 
 select id from userJogo where fkUsuario = 2 and fkJogo = 1 order by dtProgresso desc limit 1;
+
+select qtdEstrela, count(qtdEstrela) as qtdAvaliacao from avaliacao group by qtdEstrela order by qtdEstrela;
+
+select count(fkConquista) as qtdConquista1,
+	   (select count(fkConquista) from userJogo where fkConquista = 2 and fkJogo = 1) as qtdConquista2,
+       (select count(fkConquista) from userJogo where fkConquista = 3 and fkJogo = 1) as qtdConquista3
+from userJogo
+where fkConquista = 1 and fkJogo = 1;

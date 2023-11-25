@@ -43,4 +43,8 @@ router.get("/verificarConquistas/:fkUsuario/:fkJogo/:fkConquista", function (req
     userJogoController.verificarConquistas(req, res);
 })
 
+router.get("/exibirFinaisJogo1", function (req, res) {
+    userJogoController.exibirFinaisJogo1(req, res);
+})
+
 module.exports = router;

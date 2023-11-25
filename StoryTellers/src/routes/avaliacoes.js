@@ -11,4 +11,8 @@ router.get("/verificarAvaliacao/:fkJogo/:fkUsuario", function (req, res) {
     avaliacaoController.verificarAvaliacao(req, res);
 })
 
+router.get("/exibirAvaliacoes", function (req, res) {
+    avaliacaoController.exibirAvaliacoes(req, res);
+})
+
 module.exports = router;

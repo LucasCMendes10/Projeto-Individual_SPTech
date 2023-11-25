@@ -35,7 +35,23 @@ function verificarAvaliacao(req, res) {
         );
 }
 
+function exibirAvaliacoes(req, res) {
+
+    avaliacaoModel.exibirAvaliacoes()
+        .then(
+            function (resultado) {
+                res.status(201).json(resultado);
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                res.status(500).send("Erro ao gerar progresso!");
+            }
+        );
+}
+
 module.exports = {
     registrarAvaliacao,
-    verificarAvaliacao
+    verificarAvaliacao,
+    exibirAvaliacoes
 }

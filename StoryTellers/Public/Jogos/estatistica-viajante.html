@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style-estatistica-viajante.css">
 </head>
 
-<body onload="listagemProgressoJogo1()">
+<body onload="listagemProgressoJogo1(), gerarGraficos(), setTimeout(() => (easterEggV()), 200)">
 
     <div class="header">
         <img src="../assets/Imagens-Jogos/seta-esquerda.png"
@@ -34,14 +34,26 @@
             </div>
         </div>
         <div class="container">
-            <div class="graficos"></div>
-            <div class="graficos"></div>
+            <div class="graficos">
+                <canvas id="myChart"></canvas>
+            </div>
+            <div class="graficos">
+                <canvas id="myChart2"></canvas>
+            </div>
         </div>
     </div>
+
+    <div id="easterEgg">
+        <img onclick="ativarEasterEgg()" src="../assets/Imagens-Jogos/mascara-v.png">
+    </div>
+
+    <audio id="audio_easter_egg" src="../assets/Imagens-Jogos/5 de novembro!-(V de vingança).mp3"></audio>
 
 </body>
 
 </html>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
 
@@ -63,6 +75,8 @@
             .then(function (resposta) {
                 resposta.json().then(resposta => {
                     contagemConquistas = Number(resposta[0].numConquistas);
+
+                    console.log(`1: ${contagemConquistas}`);
 
                     contagem_conquistas.innerHTML = `<p><b>Finais Conquistados: </b>${contagemConquistas}/3</p>`;
                 })
@@ -113,21 +127,87 @@
                 })
                     .then(function (resposta) {
                         resposta.json().then(resposta => {
-                            if (resposta[0].fkConquista == 1) {
-                                conquista1.style.display = "flex";
+
+                            if (resposta.length > 0) {
+                                if (resposta[0].fkConquista == 1) {
+                                    conquista1.style.display = "flex";
+                                }
+    
+                                if (resposta[0].fkConquista == 2) {
+                                    conquista2.style.display = "flex";
+                                }
+    
+                                if (resposta[0].fkConquista == 3) {
+                                    conquista3.style.display = "flex";
+                                } 
                             }
 
-                            if (resposta[0].fkConquista == 2) {
-                                conquista2.style.display = "flex";
-                            }
-
-                            if (resposta[0].fkConquista == 3) {
-                                conquista3.style.display = "flex";
-                            }
                         })
                     })
             }
         }, 100)
+    }
+
+    function gerarGraficos() {
+        const ctx = document.getElementById('myChart');
+
+        fetch(`/userJogos/exibirFinaisJogo1`)
+            .then(function (resposta) {
+                resposta.json().then(resposta => {
+                    new Chart(ctx, {
+                        type: 'pie',
+                        data: {
+                            labels: ['Final Mundano', 'Final Confinado', 'Final Épico'],
+                            datasets: [{
+                                label: 'Finais Conquistados no Total',
+                                data: [Number(resposta[0].qtdConquista1), Number(resposta[0].qtdConquista2), Number(resposta[0].qtdConquista3)],
+                                borderWidth: 1
+                            }]
+                        }
+                    });
+                })
+            })
+
+        const ctx2 = document.getElementById('myChart2');
+
+        fetch(`/avaliacoes/exibirAvaliacoes`)
+            .then(function (resposta) {
+                resposta.json().then(resposta => {
+                    new Chart(ctx2, {
+                        type: 'bar',
+                        data: {
+                            labels: ['1 Estrela', '2 Estrelas', '3 Estrelas', '4 Estrelas', '5 Estrelas'],
+                            datasets: [{
+                                label: 'Avaliação do Jogo',
+                                data: [Number(resposta[0].qtdAvaliacao), Number(resposta[1].qtdAvaliacao), Number(resposta[2].qtdAvaliacao), Number(resposta[3].qtdAvaliacao), Number(resposta[4].qtdAvaliacao)],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+                })
+            })
+
+    }
+
+    function easterEggV() {
+        console.log(contagemConquistas);
+        console.log(contagemTentativas);
+
+        if (contagemConquistas == 3 && contagemTentativas == 3) {
+            easterEgg.style.display = "block";
+        }
+    }
+
+    function ativarEasterEgg() {
+        audio_easter_egg.volume = 1;
+        audio_easter_egg.play();
     }
 
 </script>

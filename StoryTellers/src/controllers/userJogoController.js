@@ -177,6 +177,20 @@ function verificarConquistas(req, res) {
         );
 }
 
+function exibirFinaisJogo1(req, res) {
+    userJogoModel.exibirFinaisJogo1()
+        .then(
+            function (resultado) {
+                res.status(201).json(resultado);
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                res.status(500).send("Erro ao gerar gráfico dos finais!");
+            }
+        );
+}
+
 module.exports = {
     registrarProgressoInicial,
     registrarSave,
@@ -187,5 +201,6 @@ module.exports = {
     contagemTentativas,
     registrarConquistas,
     contagemConquistas,
-    verificarConquistas
+    verificarConquistas,
+    exibirFinaisJogo1
 }
