@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - O Viajante</title>
+    <link rel="stylesheet" href="style-avaliacao.css">
+</head>
+
+<body id="body" onload="exibirAvaliacao()">
+    <div class="header">
+        <img src="../assets/Imagens-Jogos/seta-esquerda.png"
+            alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
+            onclick="voltarJogos()">
+    </div>
+
+    <div class="avaliacao">
+        <h1>Avalie o jogo aqui</h1>
+
+        <div id="estrelas">
+            <img data-id="1" onclick="setarEstrela(this)" src="../assets/Imagens-Jogos/estrela-vazia.png">
+            <img data-id="2" onclick="setarEstrela(this)" src="../assets/Imagens-Jogos/estrela-vazia.png">
+            <img data-id="3" onclick="setarEstrela(this)" src="../assets/Imagens-Jogos/estrela-vazia.png">
+            <img data-id="4" onclick="setarEstrela(this)" src="../assets/Imagens-Jogos/estrela-vazia.png">
+            <img data-id="5" onclick="setarEstrela(this)" src="../assets/Imagens-Jogos/estrela-vazia.png">
+        </div>
+
+        <button id="botao_registro" onclick="registrarAvaliacao()">
+            Avaliar
+        </button>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    function voltarJogos() {
+        window.location.href = 'o-viajante.html';
+    }
+
+    var qtdEstrela_user = 0;
+
+    function setarEstrela(estrela) {
+        qtdEstrela_user = Number(estrela.getAttribute("data-id"));
+
+        if (qtdEstrela_user == 1) {
+            estrelas.innerHTML = `
+            <img data-id="1" onclick="setarEstrela(this)" src="../assets/Imagens-Jogos/estrela-cheia.png">
+            <img data-id="2" onclick="setarEstrela(this)" src="../assets/Imagens-Jogos/estrela-vazia.png">
+            <img data-id="3" onclick="setarEstrela(this)" src="../assets/Imagens-Jogos/estrela-vazia.png">
+            <img data-id="4" onclick="setarEstrela(this)" src="../assets/Imagens-Jogos/estrela-vazia.png">
+            <img data-id="5" onclick="setarEstrela(this)" src="../assets/Imagens-Jogos/estrela-vazia.png">
+            `;
+        } else if (qtdEstrela_user == 2) {
+            estrelas.innerHTML = `
+            <img data-id="1" onclick="setarEstrela(this)" src="../assets/Imagens-Jogos/estrela-cheia.png">
+            <img data-id="2" onclick="setarEstrela(this)" src="../assets/Imagens-Jogos/estrela-cheia.png">
+            <img data-id="3" onclick="setarEstrela(this)" src="../assets/Imagens-Jogos/estrela-vazia.png">
+            <img data-id="4" onclick="setarEstrela(this)" src="../assets/Imagens-Jogos/estrela-vazia.png">
+            <img data-id="5" onclick="setarEstrela(this)" src="../assets/Imagens-Jogos/estrela-vazia.png">
+            `;
+        } else if (qtdEstrela_user == 3) {
+            estrelas.innerHTML = `
+            <img data-id="1" onclick="setarEstrela(this)" src="../assets/Imagens-Jogos/estrela-cheia.png">
+            <img data-id="2" onclick="setarEstrela(this)" src="../assets/Imagens-Jogos/estrela-cheia.png">
+            <img data-id="3" onclick="setarEstrela(this)" src="../assets/Imagens-Jogos/estrela-cheia.png">
+            <img data-id="4" onclick="setarEstrela(this)" src="../assets/Imagens-Jogos/estrela-vazia.png">
+            <img data-id="5" onclick="setarEstrela(this)" src="../assets/Imagens-Jogos/estrela-vazia.png">
+            `;
+        } else if (qtdEstrela_user == 4) {
+            estrelas.innerHTML = `
+            <img data-id="1" onclick="setarEstrela(this)" src="../assets/Imagens-Jogos/estrela-cheia.png">
+            <img data-id="2" onclick="setarEstrela(this)" src="../assets/Imagens-Jogos/estrela-cheia.png">
+            <img data-id="3" onclick="setarEstrela(this)" src="../assets/Imagens-Jogos/estrela-cheia.png">
+            <img data-id="4" onclick="setarEstrela(this)" src="../assets/Imagens-Jogos/estrela-cheia.png">
+            <img data-id="5" onclick="setarEstrela(this)" src="../assets/Imagens-Jogos/estrela-vazia.png">
+            `;
+        } else if (qtdEstrela_user == 5) {
+            estrelas.innerHTML = `
+            <img data-id="1" onclick="setarEstrela(this)" src="../assets/Imagens-Jogos/estrela-cheia.png">
+            <img data-id="2" onclick="setarEstrela(this)" src="../assets/Imagens-Jogos/estrela-cheia.png">
+            <img data-id="3" onclick="setarEstrela(this)" src="../assets/Imagens-Jogos/estrela-cheia.png">
+            <img data-id="4" onclick="setarEstrela(this)" src="../assets/Imagens-Jogos/estrela-cheia.png">
+            <img data-id="5" onclick="setarEstrela(this)" src="../assets/Imagens-Jogos/estrela-cheia.png">
+            `;
+        }
+    }
+
+    function registrarAvaliacao() {
+
+        fetch("/avaliacoes/registrarAvaliacao", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    fkJogoServer: sessionStorage.getItem("idJogo"),
+                    fkUsuarioServer: sessionStorage.getItem("idUsuario"),
+                    qtdEstrelaServer: qtdEstrela_user,
+                }),
+            }) .then(() => {
+                botao_registro.style.display = "none";
+            })
+
+    }
+
+    function exibirAvaliacao() {
+
+        fetch(`/avaliacoes/verificarAvaliacao/${sessionStorage.getItem("idJogo")}/${sessionStorage.getItem("idUsuario")}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+            .then(function (resposta) {
+                resposta.json().then(resposta => {
+                    if (resposta.length != 0) {
+                        carregar_avaliacao = Number(resposta[0].qtdEstrela);
+
+                        if (carregar_avaliacao == 1) {
+                            body.innerHTML = `
+                            <div class="header">
+        <img src="../assets/Imagens-Jogos/seta-esquerda.png"
+            alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
+            onclick="voltarJogos()">
+    </div>
+
+    <div class="avaliacao">
+        <h1>Avalie o jogo aqui</h1>
+
+        <div id="estrelas">
+            <img data-id="1" src="../assets/Imagens-Jogos/estrela-cheia.png">
+            <img data-id="2" src="../assets/Imagens-Jogos/estrela-vazia.png">
+            <img data-id="3" src="../assets/Imagens-Jogos/estrela-vazia.png">
+            <img data-id="4" src="../assets/Imagens-Jogos/estrela-vazia.png">
+            <img data-id="5" src="../assets/Imagens-Jogos/estrela-vazia.png">
+        </div>
+                            `;
+                        } else if (carregar_avaliacao == 2) {
+                            body.innerHTML = `
+                            <div class="header">
+        <img src="../assets/Imagens-Jogos/seta-esquerda.png"
+            alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
+            onclick="voltarJogos()">
+    </div>
+
+    <div class="avaliacao">
+        <h1>Avalie o jogo aqui</h1>
+
+        <div id="estrelas">
+            <img data-id="1" src="../assets/Imagens-Jogos/estrela-cheia.png">
+            <img data-id="2" src="../assets/Imagens-Jogos/estrela-cheia.png">
+            <img data-id="3" src="../assets/Imagens-Jogos/estrela-vazia.png">
+            <img data-id="4" src="../assets/Imagens-Jogos/estrela-vazia.png">
+            <img data-id="5" src="../assets/Imagens-Jogos/estrela-vazia.png">
+        </div>
+                            `;
+                        } else if (carregar_avaliacao == 3) {
+                            body.innerHTML = `
+                            <div class="header">
+        <img src="../assets/Imagens-Jogos/seta-esquerda.png"
+            alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
+            onclick="voltarJogos()">
+    </div>
+
+    <div class="avaliacao">
+        <h1>Avalie o jogo aqui</h1>
+
+        <div id="estrelas">
+            <img data-id="1" src="../assets/Imagens-Jogos/estrela-cheia.png">
+            <img data-id="2" src="../assets/Imagens-Jogos/estrela-cheia.png">
+            <img data-id="3" src="../assets/Imagens-Jogos/estrela-cheia.png">
+            <img data-id="4" src="../assets/Imagens-Jogos/estrela-vazia.png">
+            <img data-id="5" src="../assets/Imagens-Jogos/estrela-vazia.png">
+        </div>
+                            `;
+                        } else if (carregar_avaliacao == 4) {
+                            body.innerHTML = `
+                            <div class="header">
+        <img src="../assets/Imagens-Jogos/seta-esquerda.png"
+            alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
+            onclick="voltarJogos()">
+    </div>
+
+    <div class="avaliacao">
+        <h1>Avalie o jogo aqui</h1>
+
+        <div id="estrelas">
+            <img data-id="1" src="../assets/Imagens-Jogos/estrela-cheia.png">
+            <img data-id="2" src="../assets/Imagens-Jogos/estrela-cheia.png">
+            <img data-id="3" src="../assets/Imagens-Jogos/estrela-cheia.png">
+            <img data-id="4" src="../assets/Imagens-Jogos/estrela-cheia.png">
+            <img data-id="5" src="../assets/Imagens-Jogos/estrela-vazia.png">
+        </div>
+                            `;
+                        } else if (carregar_avaliacao == 5) {
+                            body.innerHTML = `
+                            <div class="header">
+        <img src="../assets/Imagens-Jogos/seta-esquerda.png"
+            alt="Seta apontando para a esquerda, simboliza a ação de voltar para a página anterior" width="70px"
+            onclick="voltarJogos()">
+    </div>
+
+    <div class="avaliacao">
+        <h1>Avalie o jogo aqui</h1>
+
+        <div id="estrelas">
+            <img data-id="1" src="../assets/Imagens-Jogos/estrela-cheia.png">
+            <img data-id="2" src="../assets/Imagens-Jogos/estrela-cheia.png">
+            <img data-id="3" src="../assets/Imagens-Jogos/estrela-cheia.png">
+            <img data-id="4" src="../assets/Imagens-Jogos/estrela-cheia.png">
+            <img data-id="5" src="../assets/Imagens-Jogos/estrela-cheia.png">
+        </div>
+                            `;
+                        }
+                    }
+                })
+
+            })
+
+    }
+
+</script>/

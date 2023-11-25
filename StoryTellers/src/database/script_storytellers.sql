@@ -11,12 +11,6 @@ senha varchar(45) not null
 
 select * from usuario;
 
-create table avaliacao (
-idAvaliacao int primary key auto_increment,
-qtdEstrela int,
-dtAvaliacao date
-);
-
 create table jogo (
 idJogo int primary key auto_increment,
 nomeJogo varchar(45) not null,
@@ -27,6 +21,21 @@ insert into jogo (nomeJogo, descricao) values
 	('O Viajante', '"O Viajante" é um jogo curto de história interativa, ou seja, você escolhe os rumos que ela vai tomar. A sinopse da história é: um jovem chamado Leonardo vivia sua vida normalmente, sendo um estudante de 18 anos, no início do ensino superior, até que um dia, enquanto voltava para casa, um portal surge em sua frente, com um homem suplicando por sua ajuda! Você irá decidir quais as ações que o protagonista terá perante as situações inesperadas que irão acontecer, como por exemplo, aceitar ou não o pedido do homem misterioso. Mas lembre-se, cada escolha sua irá mudar para sempre a vida de Leonardo...');
 
 select * from jogo;
+
+create table avaliacao (
+idAvaliacao int auto_increment,
+fkJogo int,
+constraint fkjogoavaliacao foreign key (fkJogo) references jogo(idJogo),
+fkUsuario int,
+constraint fkusuarioavaliacao foreign key (fkUsuario) references usuario(idUsuario),
+primary key (idAvaliacao, fkJogo, fkUsuario),
+qtdEstrela int,
+dtAvaliacao TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+desc avaliacao;
+select * from avaliacao;
+drop table avaliacao;
 
 create table conquista (
 idConquista int auto_increment,
@@ -61,6 +70,9 @@ constraint fkconquistauser foreign key (fkConquista) references conquista(idConq
 dtProgresso TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
+alter table userJogo drop constraint fkavaliacaouserjogo;
+alter table userJogo drop column fkAvaliacao;
+
 select * from usuario;
 select * from userJogo;
 truncate table userJogo;
@@ -70,5 +82,6 @@ select count(distinct fkConquista) from userJogo where fkUsuario = 5 and fkJogo 
 select * from userJogo where fkUsuario = 5 and fkJogo = 1 and fkConquista = 1;
 update userJogo set save = 10 where fkUsuario = 1 and fkJogo = 1 and id = 10;
 update userJogo set saveBackground = 'teste5' where fkUsuario = 1 and fkJogo = 1 and id = 10;
+update userJogo set fkAvaliacao = 1 where fkUsuario = 1 and fkJogo = 1 and id = ();
 
 select id from userJogo where fkUsuario = 2 and fkJogo = 1 order by dtProgresso desc limit 1;

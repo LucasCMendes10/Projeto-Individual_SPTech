@@ -126,6 +126,22 @@ button:hover {
     color: #161616;
 }
 
+.footer {
+    display: flex;
+    justify-content: end;
+}
+
+.footer button {
+    margin-right: 50px;
+    background-color: #eaeaea;
+    color: #161616;
+}
+
+.footer button:hover {
+    background-color: #161616;
+    color: #eaeaea;
+}
+
 #creditos {
     display: none;
     height: 100%;

@@ -16,6 +16,7 @@ var aquariosRouter = require("./src/routes/aquarios");
 var empresasRouter = require("./src/routes/empresas");
 var conquistasRouter = require("./src/routes/conquistas");
 var userJogosRouter = require("./src/routes/userJogos");
+var avaliacoesRouter = require("./src/routes/avaliacoes");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -31,6 +32,7 @@ app.use("/aquarios", aquariosRouter);
 app.use("/empresas", empresasRouter);
 app.use("/conquistas", conquistasRouter);
 app.use("/userJogos", userJogosRouter);
+app.use("/avaliacoes", avaliacoesRouter);
 
 app.listen(PORTA, function () {
     console.log(`Servidor do seu site já está rodando! Acesse o caminho a seguir para visualizar: http://localhost:${PORTA} \n
