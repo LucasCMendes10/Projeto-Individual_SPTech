@@ -76,8 +76,6 @@
                 resposta.json().then(resposta => {
                     contagemConquistas = Number(resposta[0].numConquistas);
 
-                    console.log(`1: ${contagemConquistas}`);
-
                     contagem_conquistas.innerHTML = `<p><b>Finais Conquistados: </b>${contagemConquistas}/3</p>`;
                 })
             })

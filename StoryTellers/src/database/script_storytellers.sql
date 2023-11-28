@@ -9,6 +9,7 @@ nomeUsuario varchar(30) not null unique,
 senha varchar(45) not null
 );
 
+desc usuario;
 select * from usuario;
 
 create table jogo (
