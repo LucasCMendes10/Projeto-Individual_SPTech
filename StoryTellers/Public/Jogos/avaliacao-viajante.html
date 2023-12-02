@@ -117,7 +117,7 @@
             .then(function (resposta) {
                 resposta.json().then(resposta => {
                     if (resposta.length != 0) {
-                        carregar_avaliacao = Number(resposta[0].qtdEstrela);
+                        var carregar_avaliacao = Number(resposta[0].qtdEstrela);
 
                         if (carregar_avaliacao == 1) {
                             body.innerHTML = `

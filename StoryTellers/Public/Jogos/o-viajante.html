@@ -923,9 +923,7 @@
         })
             .then(function (resposta) {
                 resposta.json().then(resposta => {
-                    if (resposta.length == 0) {
-                        alert("Você não possui nenhum progresso salvo");
-                    } else {
+                    if (resposta.length != 0) {
                         carregar_background = resposta[0].saveBackground;
 
                         if (carregar_background == null || carregar_background == '') {
@@ -947,9 +945,7 @@
         })
             .then(function (resposta) {
                 resposta.json().then(resposta => {
-                    if (resposta.length == 0) {
-                        alert("Você não possui nenhum progresso salvo");
-                    } else {
+                    if (resposta.length != 0) {
                         num_tentativa = Number(resposta[0].id);
 
                         if (num_tentativa == null) {
